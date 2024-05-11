@@ -1,1219 +1,461 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-	<head>
-		<link rel="icon" href="images/favicon.png" sizes="32x32">
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-		<title>Agario Unblocked Private Server Game</title>
-		<meta name="description" content="Tag is a classic and energetic game where players chase and tag each other. Experience the thrill of pursuit and evasion on your Chromebook with this timeless, multiplayer favorite.">
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Survive and grow in the fast-paced world of agario unblocked! Devour smaller cells to get bigger, but watch out for those larger than you!  This free online game is simple to learn, but addictive to play. Can you become the biggest cell in the pond?">
+	<title>Agario | Unblocked Agar.io Pages.Dev</title>
+    <meta name="google" content="notranslate">
+	<meta name="content-language" content="en-US" />
+	<meta name="language" content="en-US" />
+	<meta name="robots" content="all" />
+    <link rel="stylesheet" href="style.css?11">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="agario.fans">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Agario.fans">
+	<meta name="twitter:creator" content="agario.fans">
+	<meta name="twitter:title" content="Agario">
+	<meta name="twitter:description" content="Agario">
+	<meta name="twitter:image:src" content="/imgs/logo.webp">
+	<meta property="og:type" content="website" />
+	
+<script>
+var aiptag = aiptag || {};
+aiptag.cmd = aiptag.cmd || [];
+aiptag.cmd.display = aiptag.cmd.display || [];
+aiptag.cmd.player = aiptag.cmd.player || [];
+aiptag.gdprShowConsentTool = true;
+aiptag.gdprShowConsentToolButton = true;
 
-			<meta property="og:url" content="a-gario.pages.dev" />
-      <meta property="og:image:width" content="200 px" />
-      <meta property="og:image:height" content="200 px" />
-      <meta property="og:title" content="a-gario.pages.dev" />
-      <meta property="og:site_name" content="a-gario.pages.dev" />
-      <meta property="og:description" content="Tag is a classic and energetic game where players chase and tag each other. Experience the thrill of pursuit and evasion on your Chromebook with this timeless, multiplayer favorite." />
-      <meta property="og:type" content="website" />
-      <meta property="og:image" content="images/icon_game.png">
+	//CMP tool settings
+var plays = 0;
+function playnow() {
+    plays++;
+   if (plays == 1) {
+       if (typeof adplayer != "undefined") {
+			adplayer.startPreRoll();
+		}
+       plays = -3;
+    } else {
+        //setNick(document.getElementById('nick').value, document.getElementById('skin').value);
+        return false;
+    }
+}
+  
+function initAipPreroll() {
+    if (typeof aipPlayer != "undefined") {
+        adplayer = new aipPlayer({
+            AD_WIDTH: 960,
+            AD_HEIGHT: 540,
+            AD_FULLSCREEN: false,
+            AD_CENTERPLAYER: true,
+            PREROLL_ELEM: document.getElementById('preroll'),
+            AIP_COMPLETE: function() {
+            //    setNick(document.getElementById('nick').value, document.getElementById('skin').value);
+            //    return false;
+            },
+            AIP_REMOVE: function() {}
+        });
+    } else {
+      	
+       // setNick(document.getElementById('nick').value, document.getElementById('skin').value);
+        //return false;
+    }
+}
 
+function getScript(src, callback) {
+    var headElm = document.head || document.getElementsByTagName('head')[0];
+    var script = document.createElement("script");
+    var once = true;
+    script.async = "async";
+    script.type = "text/javascript";
+    script.charset = "UTF-8";
+    script.src = src;
+    script.onload = script.onreadystatechange = function() {
+        if (once && (!script.readyState || /loaded|complete/.test(script.readyState))) {
+            once = false;
+            callback();
+            script.onload = script.onreadystatechange = null;
+        }
+    };
+    headElm.appendChild(script);
+}
+getScript('//api.adinplay.com/libs/aiptag/pub/AGV/io-games.live/tag.min.js', initAipPreroll);
+	</script>	
+</head>
+<body>
+<div id="nn"></div>
+    <div id="preroll"></div>
+    <section id="main-login-section" class="main-login-section">
+	  <div id="helloDialog">
+        <div class="main-login-area">
+            <div class="main-login-area-left">
+                <div class="main-login-area-left-tab-area">
+                    <button id="mlaltb-settings" onclick="mlaltbsettings()" class="main-login-area-left-tab-button active">Settings</button>
+                    <button id="mlaltb-shortcuts" onclick="mlaltbshortcuts()" class="main-login-area-left-tab-button ">Shortcuts</button>
+                </div>
+                <div class="main-login-area-left-panels-area">
+                    <div id="mlaltb-settings-panel" class="main-login-area-left-panel-box active">
+                        <div class="mlaltb-check-row">
+                            <label for="noSkin"><input type="checkbox" id="noSkin" onchange="setHideSkins();"> Hide Skins</label>
+                        </div>
+                        <div class="mlaltb-check-row">
+                            <label for="noNames"><input type="checkbox" id="noNames" onchange="setHideNames();"> Hide Names</label>
+                        </div>
+                        <div class="mlaltb-check-row">
+                            <label for="darkTheme"><input type="checkbox" id="darkTheme" onchange="setDarkTheme();"> Dark Theme</label>
+                        </div>
+                        <div class="mlaltb-check-row">
+                            <label for="showScore"><input type="checkbox" id="showScore" onchange="setShowScore();"> Show Mass</label>
+                        </div>
+                        <div class="mlaltb-check-row">
+                            <label for="getZoom"><input type="checkbox" id="getZoom" onchange="setZoom();">Disable Zoom</label>
+                        </div>
+						<div class="mlaltb-check-row">
+							<label for="noColor"><input type="checkbox" id="noColor" onchange="setNoColor();"> No Colors</label>
+						</div>
+						<div class="mlaltb-check-row">
+							<label for="hideChat"><input type="checkbox" id="hideChat" onchange="setHideChat();"> Hide Chat</label>
+						</div>
+						<div class="mlaltb-check-row">
+							<label for="smoothRender"><input type="checkbox" id="smoothRender" onchange="setSmooth();"> Smooth Render</label>
+						</div>
+						<div class="mlaltb-check-row">
+						<label for="transparentRender"><input type="checkbox" id="transparentRender" onchange="setTransparent();"> Transparent</label>
+						</div>
+                      <!--  <div onclick="allsettingsmodalopen()" class="mlaltb-check-row-fortext"><p class="mlaltb-check-row-text">All Settings</p></div>-->
+					  <div style="font:12px;">		   
+						<a href="/privacy.html">Privacy Policy</a>
+						<a href="/terms.html">Terms</a>
+						
+						</div>
+						
+                    </div>
+                    <div id="mlaltb-shortcuts-panel" class="main-login-area-left-panel-box">
+                        <div class="mlaltb-shortcuts-area">
+                            <div class="mlaltb-shortcut-box">W</div>
+                            <div class="mlaltb-shortcut-desc-box">Feed</div>
+                        </div>
+                        <div class="mlaltb-shortcuts-area">
+                            <div class="mlaltb-shortcut-box">E</div>
+                            <div class="mlaltb-shortcut-desc-box">Feed Macro</div>
+                        </div>
+                        <div class="mlaltb-shortcuts-area">
+                            <div class="mlaltb-shortcut-box">SPACE</div>
+                            <div class="mlaltb-shortcut-desc-box">Split</div>
+                        </div>
+                        <div class="mlaltb-shortcuts-area">
+                            <div class="mlaltb-shortcut-box">CTRL</div>
+                            <div class="mlaltb-shortcut-desc-box">Split Macro</div>
+                        </div>
+                        <div class="mlaltb-shortcuts-area">
+                            <div class="mlaltb-shortcut-box">F</div>
+                            <div class="mlaltb-shortcut-desc-box">Pause / Unpause</div>
+                        </div>
+                        <div class="mlaltb-shortcuts-area">
+                            <div class="mlaltb-shortcut-box">Enter</div>
+                            <div class="mlaltb-shortcut-desc-box">Chat</div>
+                        </div>
+                        <div class="mlaltb-shortcuts-area">
+                            <div class="mlaltb-shortcut-box">ESC</div>
+                            <div class="mlaltb-shortcut-desc-box">Menu</div>
+                        </div>
+                        <div class="mlaltb-shortcuts-area">
+                            <div class="mlaltb-shortcut-box">C</div>
+                            <div class="mlaltb-shortcut-desc-box">Share Location</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-login-area-center">
+                <img width="418" height="160" src="./imgs/logo.webp?=1" alt="agario" class="main-login-area-center-logo">
+                <div class="main-login-area-center-play-area">
+                    <div class="mlacpa-name-box"><input placeholder="nick" type="text" autofocus id="nick" maxlength="20" value="agar.live"><button onclick="window.open('fancytextnick.html', '_blank')">Fancy Nick</button></div>
+                    <select class="mlacpa-server-select" id="gamemode" onchange="setserver();">
+                        <option maxlength="15" value="ffa1.agariodns.cyou" data-itr="FFA1">FFA 1 - EU</option>
+						<option maxlength="15" value="ffa2.agariodns.cyou" data-itr="FFA2">FFA 2 - USA</option>
+						<option maxlength="15" value="ffa3.agariodns.cyou" data-itr="FFA3">FFA 3 - EU</option>
+						<option maxlength="15" value="ffa44.agariodns.cyou" data-itr="FFA4">FFA 4 - EU</option>
+						<option maxlength="15" value="pop1.agariodns.cyou" data-itr="FFA71">VIRUS BOMB 1 - EU</option>
+						<option maxlength="15" value="pop2.agariodns.cyou" data-itr="FFA72">VIRUS BOMB 2 - EU</option>
+						<option maxlength="15" value="ffa4.agariodns.cyou" data-itr="FFA72">CRAZY BOMB 3 - USA</option>
+						<option maxlength="15" value="ffa8.agariodns.cyou" data-itr="FFA8">FFA 8 - USA</option>
+						<option maxlength="15" value="ffa9.agariodns.cyou" data-itr="FFA9">FFA 9 - USA</option>
+						<option maxlength="15" value="ffa10.agariodns.cyou" data-itr="FFA10">FFA 10 - USA</option>
+						<option maxlength="15" value="rainbow.agariodns.cyou" data-itr="FFA7">RAINBOW - EU</option>
+						<option maxlength="16" value="instant.agariodns.cyou" data-itr="merge">INSTANT MERGE - EU</option>
+						<option maxlength="15" value="team.agariodns.cyou" data-itr="FFAT">TEAMS - EU </option>
+						<option maxlength="15" value="black.agariodns.cyou" data-itr="FFAB">BLACKHOLE - EU</option>
+                    </select>
+					<input type="hidden" id="txtSkin" class="form-control" class="playerSkinInput" autocomplete="off" maxlength="15">
+                    <button class="mlacpa-play-button" onclick="playGame(); playnow(); typeof googletag !== 'undefined' &&googletag.pubads().refresh(); return false;">PLAY</button>
+                    <button class="mlacpa-spectate-button" onclick="spectate(); return false;">Spectate</button>
+					<div class="form-group" style="witdh:336px;height:300px">
+					<hr>
+					<center>
+					
+<div id='io-games-live_300x250_2'>
+		<script type='text/javascript'>
+			aiptag.cmd.display.push(function() { aipDisplayTag.display('io-games-live_300x250_2'); });
+		</script>
+	</div>
+</center>
+	
+</div>
+               
+                </div>
+            </div>
+            <div class="main-login-area-right">
+                <div class="main-login-area-right-tab-area">
+                    <button id="mlartb-skin" onclick="mlartbskin()" class="main-login-area-right-tab-button active">Skin</button>
+                    <button id="mlartb-about" onclick="mlartbabout()" class="main-login-area-right-tab-button ">About</button>
+                </div>
+                <div class="main-login-area-right-panels-area">
+                    <div id="mlartb-skin-panel" class="main-login-area-right-panel-box active">
+                        <div class="mlartb-skin-area">
+                            <div class="mlartb-skin-box"><img id="defaultSkin" src="./skins/noskin.png" alt=""></div>
+                        </div>
+                        <button onclick="selectskinmodalopen()" class="mlartb-skin-select-button">Select Skin</button>
+                       <hr>
 
-						<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/jquery-comments.css" />
-		<link rel="stylesheet" type="text/css" href="css/user.css" />
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<link rel="stylesheet" type="text/css" href="css/custom.css" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
-		<!-- Font Awesome icons (free version)-->
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-		<!-- Google fonts-->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+						<div style="overflow-y:scroll;height:440px">
+						<h1>The Engulfing World of Agar.io: A Simple Premise, Endlessly Addictive Gameplay</h1>
+					<p>
+					Agario, a free-to-play unblocked online game, has captivated millions with its deceptively simple premise and deeply strategic core. Launched in 2015 by Matheus Valadares, the game throws players into a petri dish-like environment as a tiny, colored cell. The objective? Consume smaller cells to grow larger, all while avoiding becoming a tasty morsel for bigger predators. Despite its minimalist aesthetic, Agar.io offers a surprisingly rich and competitive experience.
+					</p>
 
+<h2>Growth and Domination: The Core Gameplay Loop</h2>
+<p>
+Agar.io's core gameplay loop revolves around the primal instinct of survival and growth. Players maneuver their cell around the map, using the mouse to control movement and tapping the space bar to eject mass. This ejected mass acts as both a weapon and a shield. Players can strategically launch it to engulf smaller cells or block incoming attacks from larger opponents.
+
+As players consume other cells, they grow in size, increasing their ability to engulf even larger prey. However, this growth comes at a cost.
+ Larger cells become slower and more cumbersome, making them easier targets for coordinated attacks by smaller, faster opponents. This creates a dynamic risk-reward system: do you play it safe by consuming only the smallest morsels, or do you take a gamble and attempt to engulf a larger cell for a significant growth spurt?
+ </p>
+
+<h2>The Thrill of the Hunt: Strategies and Tactics</h2>
+<p>
+While the core gameplay is easy to grasp, Agar.io offers surprising depth in strategy and tactics. Players can form temporary alliances with others to take down a larger threat, only to betray them in the blink of an eye. Skilled players utilize the map's layout to their advantage, using corners and obstacles to trap unsuspecting prey or set up ambushes. The game also features various power-ups that appear at random intervals, offering temporary boosts in speed, split ability (splitting your cell into two), or a virus that can infect and shrink other players.
+
+The game world is further divided into different game modes, catering to a variety of playstyles.
+ In the classic "Free-for-All" mode, it's every cell for itself. "Teams" mode allows players to form temporary alliances based on color. "Battle Royale" pits players against each other in a shrinking map, with the last cell standing declared the victor. These variations add replayability and cater to different player preferences.
+</p>
+    
+  <h2>The Competitive Spirit: A Global Community</h2>
+<p>
+Agar.io fosters a surprisingly competitive environment. Leaderboard systems track the largest cells and top players, pushing individuals to hone their skills and strategies. The game also features a spectator mode, allowing players to observe the tactics of successful players and develop their own. Additionally, the game's simplicity translates well across different platforms, with versions available for desktop browsers, mobile devices, and even social media platforms. This accessibility has fostered a thriving global community around Agar.io, with players sharing strategies, forming online teams, and participating in tournaments.
+</p>
+
+  <h2>A Timeless Appeal: The Allure of Simplicity</h2>
+
+<p>
+Agar.io's enduring appeal lies in its masterful blend of simplicity and depth. The core gameplay loop is easy to grasp, yet the strategic possibilities are vast. This accessibility, coupled with the thrill of the hunt and the competitive spirit fostered by the community, has ensured that Agar.io remains a popular choice for casual and competitive gamers alike. So, next time you're looking for a quick and engaging online game, dive into the world of Agar.io – you might just find yourself becoming obsessed with the quest to become the biggest cell in the pond.
+</p>
+
+ 
+						</div>
+                    </div>
+                    <div id="mlartb-about-panel" class="main-login-area-right-panel-box ">
+                        <div class="malrtb-about-panel-header">
+                            <p class="malrtb-about-panel-header-text"><b>agario</b></p>
+                        </div>
+                        <div class="malrtb-about-panel-text-area">
+                            <p class="malrtb-about-panel-text-area-text">
+						Agario unblocked  is an online multiplayer game where you control a "cell" and become the greatest by eating other players' cells and the food. Making your own methods for playing/finding lasting success in Agar.io will extraordinarily help you during the interactivity. Fostering your own strategies will likewise allow you a higher opportunity of separating the competitor list or getting onto it!
+On the other hand, you can look into "Agario" or "Agario unblocked" on web indexes like Google, Yippee!, or Bing.
+    On the off chance that you are hoping to play the portable variant of Agar.io went against to the site rendition, you might download the application from the application store (Google Play, Apple's "Application Store", And so forth) situated on your cell phone.
+Pick you username in the clear field. You can make a custom name or go with one related with existing skins. Composing in certain usernames will give you a specific cell "foundation" or "skin". Skins significantly affect your interactivity as they are rigorously for corrective purposes. On the off chance that you pick a custom name, you will not have the option to get a skin except if you've signed in and gotten a "Superior Skin"
+						This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+	</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	  </div>
+    </section>
+
+	<div id="infoOverlays" style="visibility:hidden;">
+      <div id="infoDialog">
+        <div class="match-result">Match Result</div>
+        <div class="grid-container">
+          <div class="grid-item">
+            <span id="stats_hightesmass" style="font-size: 10px;">0</span>
+            <br>Food eaten
+          </div>
+          <div class="grid-item">
+            <span id="stats_hightesmass" style="font-size: 10px;">0</span>
+            <br>highest mass
+          </div>
+          <div class="grid-item"></div>
+          <div class="grid-item">
+            <span id="stats_timealive" style="font-size: 10px;">00:00</span>
+            <br>time alive
+          </div>
+          <div class="grid-item">
+            <span id="stats_leaderboardtime" style="font-size: 10px;">0:00</span>
+            <br>leaderboard time
+          </div>
+          <div class="grid-item"></div>
+          <div class="grid-item">
+            <span id="stats_cellseaten" style="font-size: 10px;">0</span>
+            <br>cells eaten
+          </div>
+          <div class="grid-item">
+            <span id="stats_topposition" style="font-size: 10px;">:(</span>
+            <br>top position
+          </div>
+          <div class="grid-item"></div>
+        </div>
+        <button id="infoDialog_continueBtn" onclick="document.getElementById('infoOverlays').hide(1.0);document.getElementById('main-login-section').show(0.2);return false;">Continue</button>
+        <div class="both"></div>
+		<div  style="witdh:336px;height:310px">
+        <center>::.ADS.:: <p></p>
+        
+<div id='io-games-live_300x250'>
+		<script type='text/javascript'>
+			aiptag.cmd.display.push(function() { aipDisplayTag.display('io-games-live_300x250'); });
+		</script>
+	</div>
+        </center>
+		</div>
+      </div>
+    </div>
+    <div id="selectskin-modal" class="selectskin-modal">
+        <div class="selectskin-modal-inside">
+            <div class="modal-inside-x-area">
+                <img onclick="selectskinmodalclose()" src="./imgs/close.webp" alt="" class="modal-inside-x-img">
+            </div>
+            <div id="idSkinList" class="selectskin-modal-inside-skins-area">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function mlaltbsettings() {
+        var element = document.getElementById("mlaltb-settings");
+        element.classList.add("active");
+        var element = document.getElementById("mlaltb-shortcuts");
+        element.classList.remove("active");
+        var element = document.getElementById("mlaltb-settings-panel");
+        element.classList.add("active");
+        var element = document.getElementById("mlaltb-shortcuts-panel");
+        element.classList.remove("active");
+        };
+
+        function mlaltbshortcuts() {
+        var element = document.getElementById("mlaltb-settings");
+        element.classList.remove("active");
+        var element = document.getElementById("mlaltb-shortcuts");
+        element.classList.add("active");
+        var element = document.getElementById("mlaltb-settings-panel");
+        element.classList.remove("active");
+        var element = document.getElementById("mlaltb-shortcuts-panel");
+        element.classList.add("active");
+        };
+
+        function mlartbskin() {
+        var element = document.getElementById("mlartb-skin");
+        element.classList.add("active");
+        var element = document.getElementById("mlartb-about");
+        element.classList.remove("active");
+        var element = document.getElementById("mlartb-skin-panel");
+        element.classList.add("active");
+        var element = document.getElementById("mlartb-about-panel");
+        element.classList.remove("active");
+        };
+
+        function mlartbabout() {
+        var element = document.getElementById("mlartb-skin");
+        element.classList.remove("active");
+        var element = document.getElementById("mlartb-about");
+        element.classList.add("active");
+        var element = document.getElementById("mlartb-skin-panel");
+        element.classList.remove("active");
+        var element = document.getElementById("mlartb-about-panel");
+        element.classList.add("active");
+        };
+/*
+        function allsettingsmodalopen() {
+        var element = document.getElementById("allsettings-modal");
+        element.classList.add("active");
+        };
+
+        function allsettingsmodalclose() {
+        var element = document.getElementById("allsettings-modal");
+        element.classList.remove("active");
+        };
+*/
+        function selectskinmodalopen() {
+		selectSkinPage();
+        var element = document.getElementById("selectskin-modal");
+        element.classList.add("active");
+        };
+
+        function selectskinmodalclose() {
+        var element = document.getElementById("selectskin-modal");
+        element.classList.remove("active");
+        };
+    </script>
+	<script type="text/javascript" src="https://www.agariodns.cyou/game3.js"></script>
+	<canvas id="canvas" width="894" height="662"></canvas>
+	<label style="cursor:pointer;	font-size:17px;	position: absolute;	color:black;	background-color: #FFCC99;	padding: 5px 10px;	z-index: 1;	bottom: 10px;	left: 320px;	user-select: none;	-webkit-user-select: none;	-khtml-user-select: none;	-moz-user-select: none;	-ms-user-select: none;	-webkit-touch-callout: none;" onclick="clearChat();">Clear Chat</label>
+    <label style="cursor:pointer;	font-size:17px;	position: absolute;	color:black;	background-color: #FFCC99;	padding: 5px 10px;	z-index: 1;	bottom: 10px;	left: 430px;	user-select: none;	-webkit-user-select: none;	-khtml-user-select: none;	-moz-user-select: none;	-ms-user-select: none;	-webkit-touch-callout: none;" onclick="shareLocation();">Share Location</label>
+    <input type="text" id="chat_textbox" maxlength="70" placeholder="Press Enter to chat!" />
+	<div style="font-family:'Ubuntu'">&nbsp;</div>
+	<script>
+function getGameMode(){
+    const servers=[
+            "ffa1.agariodns.cyou",
+			"ffa2.agariodns.cyou"
+                    
+        ];
+    const gm = localStorage.getItem("gamemode") || servers[Math.floor(Math.random()*servers.length)];
+    const options = document.querySelector("#gamemode").querySelectorAll("option");
+    options.forEach(option => option.value == gm ? option.setAttribute("selected", true) : "");
+   // setGameModeWithLocalStorage(gm);
+}
+getGameMode();</script>
+<!--<style>
+#kpxqjSHNRJVZ {
+	display: none;
+	width:430px !important;
+	height:400px !important;
+	font-size:30px;
+	position: absolute;
+	color:black;
+	background-color: #9d5c00;
+	padding: 5px 10px;
+	z-index: 1;
+	bottom: 10px;
+	left: 10px;
+}
+</style>
+
+<div id="kpxqjSHNRJVZ">
+Chat is hidden for adblock users on our website. You can still see the chat by disabling the Adblock plugin.</br>
+Disable Adblock Then You Can Play Game
+</div>
+<script src="adex.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+if(!document.getElementById('hXjAMPCBgqHb')){
+  document.getElementById('kpxqjSHNRJVZ').style.display='block';
+}
+
+</script>
+-->
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7PKJ48XZQZ"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RFZQYMJW99"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-7PKJ48XZQZ');
+  gtag('config', 'G-RFZQYMJW99');
 </script>
-<!-- ads -->
 
-<!-- ADS CODE -->
-
-
-
-
-
-
-<script>
-	window.aiptag = window.aiptag || {cmd: []};
-	aiptag.cmd.display = aiptag.cmd.display || [];
-	aiptag.cmd.player = aiptag.cmd.player || [];
-	//CMP tool settings
-	aiptag.cmp = {
-		show: true,
-		position: "centered",  //centered, bottom
-		button: true,
-		buttonText: "Privacy settings",
-		buttonPosition: "bottom-left" //bottom-left, bottom-right, top-left, top-right
-	}
-	aiptag.cmd.player.push(function() {
-		aiptag.adplayer = new aipPlayer({
-			AD_WIDTH: 960,
-			AD_HEIGHT: 540,
-			AD_DISPLAY: 'default', //default, fullscreen, center, fill
-			LOADING_TEXT: 'loading advertisement',
-			PREROLL_ELEM: function(){return document.getElementById('preroll')},
-			AIP_COMPLETE: function (state)  {
-				/*******************
-				 ***** WARNING *****
-				 *******************
-				 Please do not remove the PREROLL_ELEM
-				 from the page, it will be hidden automaticly.
-				*/
-				
-				//alert("Preroll Ad Completed: " + state);
-			}
-		});
-
-			});
-
-		function show_preroll() {
-		//check if the adslib is loaded correctly or blocked by adblockers etc.
-		if (typeof aiptag.adplayer !== 'undefined') {
-			aiptag.cmd.player.push(function() { aiptag.adplayer.startPreRoll(); });
-		} else {
-			//Adlib didnt load this could be due to an adblocker, timeout etc.
-			//Please add your script here that starts the content, this usually is the same script as added in AIP_COMPLETE.
-			alert("Ad Could not be loaded, load your content here");
-		}
-	}
-		</script>
-	<script async src="//api.adinplay.com/libs/aiptag/pub/AGV/among-us.wtf/tag.min.js"></script>
-</head>
-	<body id="page-top" style="background: url('images/background1.png'); background-size: cover;">
-		<!-- Navigation-->
-		<nav class="navbar navbar-expand-lg navbar-dark top-nav" id="mainNav">
-			<div class="container">
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<a class="navbar-brand js-scroll-trigger" href="/">
-          <strong>a-gario.pages.dev</strong>
-        </a>
-	
-
-				<div class="navbar-collapse collapse" id="nav-menu">
-
-		
-
-				</div>
-				<div class="d-none d-lg-block">
-			
-        <ul class="navbar-nav">
-						<li class="nav-item "><a class="nav-link " href="/category/running.html">Running</a></li>
-						<li class="nav-item "><a class="nav-link " href="/category/puzzle.html">Puzzle</a></li>
-						<li class="nav-item "><a class="nav-link " href="/category/racing.html">Racing</a></li>
-						<li class="nav-item "><a class="nav-link " href="/category/skill.html">Skill</a></li>
-						<li class="nav-item "><a class="nav-link " href="/category/sports.html">Sports</a></li>
-						<li class="nav-item "><a class="nav-link " href="/category/car.html">Car</a></li>
-            
-
-  
-
-        
-
-
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">More</a>
-              <ul role="menu" class="dropdown-menu">
-                <li><a class="dropdown-item" href="/category/3d.html">3D</a></li>
-      
-                <li><a class="dropdown-item" href="/category/moto.html">Moto</a></li>
-                <li><a class="dropdown-item" href="/category/stickman.html">Stickman</a></li>
-                <li><a class="dropdown-item" href="/category/adventure.html">Adventure</a></li>
-                <li><a class="dropdown-item" href="/category/multiplayer.html">Multiplayer</a></li>
-
-            </ul>
-            </li>
-
-          </ul>
-
-
-
-
-				</div>
-			</div>
-		</nav>		
-
-
-
-
-
-
-<div class="container game-wrapper">
-<div style="padding-bottom: 20px">
-<!-- ads_ngang -->
-
-<div id='among-us-wtf_970x250'>
-  <script type='text/javascript'>
-    aiptag.cmd.display.push(function() { aipDisplayTag.display('among-us-wtf_970x250'); });
-  </script>
-</div>
-
-</div>
-
-
-
-
-  <div class="row">
-      <div class="col-md-9">
-          	<div class="game-container">
-          		<div class="game-content" data-id="169">
-          			<div id="allow_mobile_version"></div>			
-               <!-- 
-                <div id="mobile-play" style="display: none;">
-          				<div class="mobile-thumb-play">
-          					<img src="#">
-          				</div>
-          				<div id="mobile-play-btn">
-          					<i class="bi bi-play-circle-fill"></i>
-          				</div>
-          			</div> -->
-
-
-
-          			<div class="game-iframe-container" id="game-player">
-          				<div id="mobile-back-button" draggable="true">
-          					<i class="bi bi-x-circle-fill"></i>
-          				</div>
-          				<iframe class="game-iframe" id="game-area" src="https://digdig2.github.io" width="480" height="800" scrolling="none" frameborder="0" allowfullscreen></iframe>
-
-          			</div>
-          		</div>
-
-
-          		<div class="game-info">
-          			<div class="header-left">
-          				<h1 class="single-title">Agario Unbocked</h1>
-
-
-          			</div>
-          			<div class="header-right">
-
-
-          				<div class="b-action2">
-          		
-          					<a href="#" onclick="open_fullscreen()" class="btn btn-capsule"><i class="bi bi-arrows-fullscreen b-icon"></i>Fullscreen</a>
-          				</div>
-          			</div>
-          		</div>
-          	</div>
-
-      </div><!-- end col-9 -->
-
-<div class="col-md-3">
-    <div style="">
-<!-- ads_doc -->
-
-<div id='among-us-wtf_300x600'>
-		<script type='text/javascript'>
-			aiptag.cmd.display.push(function() { aipDisplayTag.display('among-us-wtf_300x600'); });
-		</script>
-	</div>
-
-        
-
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-<div class="container">
-
-
-<div class="banner-ad-wrapper"><div class="banner-ad-content" style="padding: 20px 0; text-align: center;">
-<!-- ads_ngang -->
-<div id='among-us-wtf_750x200'>
-  <script type='text/javascript'>
-    aiptag.cmd.display.push(function() { aipDisplayTag.display('among-us-wtf_750x200'); });
-  </script>
-</div>
-
-</div>
-
-
-
-</div>	
-
-
-
-
-
-
-
-
-	<!-- Popular games section -->
-	<h3 class="section-title">Popular games</h3>
-	<div class="row grid-container">
-	
-<!-- 	
-
-	<div class="col-lg-4 col-md-6 grid-2">
-		<a href="/games/gameId.html">
-		<div class="game-item">
-			<div class="list-game">
-				<div class="list-thumbnail"><img src="imgLink" data-src="imgLink" class="small-thumb img-rounded lazyload" alt="gameName"></div>
-				<div class="list-info">
-					<div class="list-title">gameName</div>
-					<div class="list-category">gameCategory</div>
-		
-				</div>
-			</div>
-		</div>
-		</a>
-	</div>					
-
- -->
-
-
-
-
-
-
-
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="/play/getaway-shootout">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="/img/getaway-shootout.png" data-src="/img/getaway-shootout.png" class="small-thumb img-rounded lazyload" alt="Getaway Shootout"></div>
-        <div class="list-info">
-          <div class="list-title">Getaway Shootout</div>
-          <div class="list-category">Action</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="/play/brain-test-tricky-puzzles">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="/img/brain-test-tricky-puzzles.png" data-src="/img/brain-test-tricky-puzzles.png" class="small-thumb img-rounded lazyload" alt="Brain Test: Tricky Puzzles"></div>
-        <div class="list-info">
-          <div class="list-title">Brain Test: Tricky Puzzles</div>
-          <div class="list-category">Thinking</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="/play/stack-ball">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="/img/stack-ball.png" data-src="/img/stack-ball.png" class="small-thumb img-rounded lazyload" alt="Stack Ball"></div>
-        <div class="list-info">
-          <div class="list-title">Stack Ball</div>
-          <div class="list-category">Jumping</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="/play/we-become-what-we-behold">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="/img/we-become-what-we-behold.png" data-src="/img/we-become-what-we-behold.png" class="small-thumb img-rounded lazyload" alt="We Become What We Behold"></div>
-        <div class="list-info">
-          <div class="list-title">We Become What We Behold</div>
-          <div class="list-category">Adventure</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="/play/stick-defenders">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="/img/stick-defenders.png" data-src="/img/stick-defenders.png" class="small-thumb img-rounded lazyload" alt="Stick Defenders"></div>
-        <div class="list-info">
-          <div class="list-title">Stick Defenders</div>
-          <div class="list-category">Mouse</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="/play/jumping-shell">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="/img/jumping-shell.png" data-src="/img/jumping-shell.png" class="small-thumb img-rounded lazyload" alt="Jumping Shell"></div>
-        <div class="list-info">
-          <div class="list-title">Jumping Shell</div>
-          <div class="list-category">Thinking</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="/play/tiger-simulator-3d">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="/img/tiger-simulator-3d.png" data-src="/img/tiger-simulator-3d.png" class="small-thumb img-rounded lazyload" alt="Tiger Simulator 3d"></div>
-        <div class="list-info">
-          <div class="list-title">Tiger Simulator 3d</div>
-          <div class="list-category">for Girls</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="/play/smash-karts">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="/img/smash-karts.png" data-src="/img/smash-karts.png" class="small-thumb img-rounded lazyload" alt="Smash Karts"></div>
-        <div class="list-info">
-          <div class="list-title">Smash Karts</div>
-          <div class="list-category">Action</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="/play/top-speed-racing-3d">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="/img/top-speed-racing-3d.png" data-src="/img/top-speed-racing-3d.png" class="small-thumb img-rounded lazyload" alt="Top Speed Racing 3d"></div>
-        <div class="list-info">
-          <div class="list-title">Top Speed Racing 3d</div>
-          <div class="list-category">Racing</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="/play/the-impossible-quiz">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="/img/the-impossible-quiz.png" data-src="/img/the-impossible-quiz.png" class="small-thumb img-rounded lazyload" alt="The Impossible Quiz"></div>
-        <div class="list-info">
-          <div class="list-title">The Impossible Quiz</div>
-          <div class="list-category">Thinking</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="/play/blumgi-rocket">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="/img/blumgi-rocket.png" data-src="/img/blumgi-rocket.png" class="small-thumb img-rounded lazyload" alt="Blumgi Rocket"></div>
-        <div class="list-info">
-          <div class="list-title">Blumgi Rocket</div>
-          <div class="list-category">Skill</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="/play/battle-wheels">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="/img/battle-wheels.png" data-src="/img/battle-wheels.png" class="small-thumb img-rounded lazyload" alt="Battle Wheels"></div>
-        <div class="list-info">
-          <div class="list-title">Battle Wheels</div>
-          <div class="list-category">Skill</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-
-
-
-
-
-
-	<div class="banner-ad-wrapper"><div class="banner-ad-content" style="padding: 20px 0; text-align: center;">
-		<!-- ads_ngang -->
-    <div id='among-us-wtf_750x200_2'>
-      <script type='text/javascript'>
-        aiptag.cmd.display.push(function() { aipDisplayTag.display('among-us-wtf_750x200_2'); });
-      </script>
-    </div>
-
-		</div>
-
-
-
-	</div>	
-
-
-
-
-
-
-
-</div> <!-- end Poplular -->
-
-
-
-	<!-- Random games section -->
-	<h3 class="section-title">You may like</h3>
-	<div class="row grid-container">
-					
-
-
-
-
-
-
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/football-legends.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/football-legends.png" data-src="/img/football-legends.png" class="lazyload" alt="Football Legends"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/stack.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/stack.png" data-src="/img/stack.png" class="lazyload" alt="Stack"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/house-of-hazards.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/house-of-hazards.png" data-src="/img/house-of-hazards.png" class="lazyload" alt="House Of Hazards"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/blumgi-rocket.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/blumgi-rocket.png" data-src="/img/blumgi-rocket.png" class="lazyload" alt="Blumgi Rocket"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/8-ball-pool.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/8-ball-pool.png" data-src="/img/8-ball-pool.png" class="lazyload" alt="8 Ball Pool"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/idle-digging-tycoon.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/idle-digging-tycoon.png" data-src="/img/idle-digging-tycoon.png" class="lazyload" alt="Idle Digging Tycoon"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/drive-mad.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/drive-mad.png" data-src="/img/drive-mad.png" class="lazyload" alt="Drive Mad"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/gobble.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/gobble.png" data-src="/img/gobble.png" class="lazyload" alt="Gobble"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/idle-lumber-inc.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/idle-lumber-inc.png" data-src="/img/idle-lumber-inc.png" class="lazyload" alt="Idle Lumber Inc"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/eugenes-life.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/eugenes-life.png" data-src="/img/eugenes-life.png" class="lazyload" alt="Eugenes Life"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/stickman-bike.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/stickman-bike.png" data-src="/img/stickman-bike.png" class="lazyload" alt="Stickman Bike"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/water-color-sort.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/water-color-sort.png" data-src="/img/water-color-sort.png" class="lazyload" alt="Water Color Sort"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/rocket-soccer-derby.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/rocket-soccer-derby.png" data-src="/img/rocket-soccer-derby.png" class="lazyload" alt="Rocket Soccer Derby"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/escaping-the-prison.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/escaping-the-prison.png" data-src="/img/escaping-the-prison.png" class="lazyload" alt="Escaping The Prison"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/jumping-shell.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/jumping-shell.png" data-src="/img/jumping-shell.png" class="lazyload" alt="Jumping Shell"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/moto-road-rash-3d.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/moto-road-rash-3d.png" data-src="/img/moto-road-rash-3d.png" class="lazyload" alt="Moto Road Rash 3D"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/stacktris.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/stacktris.png" data-src="/img/stacktris.png" class="lazyload" alt="Stacktris"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/chicken-merge.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/chicken-merge.png" data-src="/img/chicken-merge.png" class="lazyload" alt="Chicken Merge"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/the-impossible-quiz.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/the-impossible-quiz.png" data-src="/img/the-impossible-quiz.png" class="lazyload" alt="The Impossible Quiz"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/who-is.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/who-is.png" data-src="/img/who-is.png" class="lazyload" alt="Who Is"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/moto-x3m.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/moto-x3m.png" data-src="/img/moto-x3m.png" class="lazyload" alt="Moto X3m"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/n-gon.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/n-gon.png" data-src="/img/n-gon.png" class="lazyload" alt="N Gon"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/tiny-fishing.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/tiny-fishing.png" data-src="/img/tiny-fishing.png" class="lazyload" alt="Tiny Fishing"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/stickman-hook.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/stickman-hook.png" data-src="/img/stickman-hook.png" class="lazyload" alt="Stickman Hook"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/temple-of-boom.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/temple-of-boom.png" data-src="/img/temple-of-boom.png" class="lazyload" alt="Temple Of Boom"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/basketball-stars.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/basketball-stars.png" data-src="/img/basketball-stars.png" class="lazyload" alt="Basketball Stars"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/we-become-what-we-behold.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/we-become-what-we-behold.png" data-src="/img/we-become-what-we-behold.png" class="lazyload" alt="We Become What We Behold"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/getaway-shootout.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/getaway-shootout.png" data-src="/img/getaway-shootout.png" class="lazyload" alt="Getaway Shootout"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/moto-x3m-winter.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/moto-x3m-winter.png" data-src="/img/moto-x3m-winter.png" class="lazyload" alt="Moto X3m Winter"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/sausage-flip.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/sausage-flip.png" data-src="/img/sausage-flip.png" class="lazyload" alt="Sausage Flip"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/red-ball-4.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/red-ball-4.png" data-src="/img/red-ball-4.png" class="lazyload" alt="Red Ball 4"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/moto-x3m-2.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/moto-x3m-2.png" data-src="/img/moto-x3m-2.png" class="lazyload" alt="Moto X3m 2"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/battle-wheels.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/battle-wheels.png" data-src="/img/battle-wheels.png" class="lazyload" alt="Battle Wheels"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/g-switch-3.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/g-switch-3.png" data-src="/img/g-switch-3.png" class="lazyload" alt="G Switch 3"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/city-car-driving-stunt-master.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/city-car-driving-stunt-master.png" data-src="/img/city-car-driving-stunt-master.png" class="lazyload" alt="City Car Driving: Stunt Master"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/stick-merge.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/stick-merge.png" data-src="/img/stick-merge.png" class="lazyload" alt="Stick Merge"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/masked-forces.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/masked-forces.png" data-src="/img/masked-forces.png" class="lazyload" alt="Masked Forces"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/penalty-shooters-2.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/penalty-shooters-2.png" data-src="/img/penalty-shooters-2.png" class="lazyload" alt="Penalty Shooters 2"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/tunnel-rush.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/tunnel-rush.png" data-src="/img/tunnel-rush.png" class="lazyload" alt="Tunnel Rush"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/subway-surfers-newyork.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/subway-surfers-newyork.png" data-src="/img/subway-surfers-newyork.png" class="lazyload" alt="Subway Surfers Newyork"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/gold-digger-frvr.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/gold-digger-frvr.png" data-src="/img/gold-digger-frvr.png" class="lazyload" alt="Gold Digger Frvr"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/master-chess.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/master-chess.png" data-src="/img/master-chess.png" class="lazyload" alt="Master Chess"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/drift-hunters.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/drift-hunters.png" data-src="/img/drift-hunters.png" class="lazyload" alt="Drift Hunters"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/soccer-skills-world-cup.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/soccer-skills-world-cup.png" data-src="/img/soccer-skills-world-cup.png" class="lazyload" alt="Soccer Skills World Cup"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/brain-test-tricky-puzzles.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/brain-test-tricky-puzzles.png" data-src="/img/brain-test-tricky-puzzles.png" class="lazyload" alt="Brain Test: Tricky Puzzles"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/pop-it-master.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/pop-it-master.png" data-src="/img/pop-it-master.png" class="lazyload" alt="Pop It Master"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/merge-cyber-racers.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/merge-cyber-racers.png" data-src="/img/merge-cyber-racers.png" class="lazyload" alt="Merge Cyber Racers"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/monster-tracks.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/monster-tracks.png" data-src="/img/monster-tracks.png" class="lazyload" alt="Monster Tracks"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/madalin-stunt-cars-2.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/madalin-stunt-cars-2.png" data-src="/img/madalin-stunt-cars-2.png" class="lazyload" alt="Madalin Stunt Cars 2"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/blumgi-ball.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/blumgi-ball.png" data-src="/img/blumgi-ball.png" class="lazyload" alt="Blumgi Ball"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/soccer-skills-champions-league.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/soccer-skills-champions-league.png" data-src="/img/soccer-skills-champions-league.png" class="lazyload" alt="Soccer Skills Champions League"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/stick-defenders.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/stick-defenders.png" data-src="/img/stick-defenders.png" class="lazyload" alt="Stick Defenders"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/stack-ball.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/stack-ball.png" data-src="/img/stack-ball.png" class="lazyload" alt="Stack Ball"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/crazy-cars.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/crazy-cars.png" data-src="/img/crazy-cars.png" class="lazyload" alt="Crazy Cars"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/stickman-climb-2.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/stickman-climb-2.png" data-src="/img/stickman-climb-2.png" class="lazyload" alt="Stickman Climb 2"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/play/blumgi-slime.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/blumgi-slime.png" data-src="/img/blumgi-slime.png" class="lazyload" alt="Blumgi Slime"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div> <!-- end You May Like -->
-	
-	<div class="banner-ad-wrapper">
-		<div class="banner-ad-content" style="padding: 20px 0; text-align: center;">
-			<!-- Ads_ngang -->
-
-      <div id='among-us-wtf_300x250'>
-        <script type='text/javascript'>
-          aiptag.cmd.display.push(function() { aipDisplayTag.display('among-us-wtf_300x250'); });
-        </script>
-      </div>
-       
-		</div>
-	</div>	
-
-
-
-
-
-</div> <!-- end container -->
-
-
-
-
-
-
-
-
-
-	<div class="footer-copyright py-4">
-		<div class="container">
-			a-gario.pages.dev			<span class="dsb-panel">
-				<a href="term.html">Term</a> - <a href="dmca.html">DMCA</a> - <a href="policy.html">Policy</a>			</span>
-		</div>
-	</div>
-	<script type="text/javascript" src="js/jquery-3.6.2.min.js"></script>
-	<script type="text/javascript" src="js/lazysizes.min.js"></script>
-	<script type="text/javascript" src="js/popper.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
-	<script type="text/javascript" src="js/custom.js"></script>
-  <div style="position: absolute; left: -4265px"> 
-    <h2>Agar.io Unblocked: Get Slimy and Dominate the Arena</h2>
-
-    <p><b>Agario unblocked</b>, the addictive free-for-all online game where you consume smaller blobs to grow larger, has captivated millions. But what if your school or workplace blocks access? Fear not, fellow agar enthusiast! This article equips you with knowledge on unblocking Agar.io and alternative experiences to feed your competitive spirit.
-    </p>
-    <h3>Why Block Agar.io?</h3>
-    <p>
-    Schools and workplaces often restrict access to games like <b>Agario</b> to minimize distractions and maintain internet bandwidth. These firewalls might categorize Agar.io as a social media or gaming site, leading to blocked access.
-    
-    Unblocking Agar.io: Tread Carefully
-    
-    Proxy Servers: These servers act as intermediaries, allowing you to connect to Agar.io through their IP address. While free proxy servers exist, be cautious. Some might inject ads or malware, compromising your privacy and security.
-    
-    VPN (Virtual Private Network): VPNs encrypt your internet traffic and route it through a remote server, effectively masking your location. This can unblock Agar.io, but be aware that reputable VPNs often come with a subscription fee. Additionally, some workplaces strictly prohibit VPN usage on their networks.
-    
-    Unblocked Versions: Websites claiming to offer "unblocked Agar.io" versions might be misleading. These could be phishing attempts designed to steal your login credentials. It's best to stick to the official Agar.io website ([invalid URL removed]?).
-  </p>
-    <h3>Alternative Games to Get Your Fix</h3>
-    <p>
-    If unblocking Agar.io proves too challenging, here are some browser-based alternatives to satisfy your competitive urge:
-    
-        Slither.io: Similar to Agar.io, navigate a snake through a field of glowing orbs, consuming them to grow larger. But be careful! Touching another player's body makes yours explode.
-        Arracade: Control a tank in an arena, blasting away at opponents and collecting power-ups. The fast-paced action and strategic upgrades keep things exciting.
-        Diep.io: Pilot a tank and customize it with various weapons and features. Team up with others or fight solo in this battle royale-style game.
-        Wings.io: Take to the skies in this aerial dogfight. Collect feathers to upgrade your plane and dominate the airspace.
-    
-    Embrace the Challenge
-    
-    Unblocking Agar.io might require some effort, but the satisfaction of outmaneuvering your opponents and climbing the leaderboard is worth it. Remember, responsible gaming is key. Take breaks, avoid neglecting your work or studies, and prioritize real-world interactions over virtual competition.
-    
-    Always prioritize official and secure methods when trying to unblock websites. If restrictions are in place at your workplace or school, respect those guidelines.
-    
-    Happy gaming!</p>
-  </div>
-	  </body>
+</body>
 </html>
