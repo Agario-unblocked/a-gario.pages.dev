@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: /*ref=
+Disallow: /?ref=
+Disallow: /?id=
+Disallow: /?sayfa
+
+
+User-agent: HTTrack
+Disallow: /
+
+User-agent: Teleport
+Disallow: /
+
+User-agent: TeleportPro
+Disallow: /

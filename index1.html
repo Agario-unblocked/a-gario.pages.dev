@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="content-language" content="en_US" />
+	<meta name="language" content="en_US" />
+	<meta name="google" content="notranslate">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Agario Tube Unblocked Private Server - Instant Merge And Team Mods">
+	<title>Agario - Agar.io Tube Unblocked Server - Pvp Game</title>	
+    <link id="favicon" rel="icon" type="image/png" href="favicon.png">
+	<link rel="stylesheet" type="text/css" href="index.css?=v5">
+    <script type="text/javascript" src="https://www.agariodns.cyou/game2.js"></script>
+	
+<script>
+var aiptag = aiptag || {};
+aiptag.cmd = aiptag.cmd || [];
+aiptag.cmd.display = aiptag.cmd.display || [];
+aiptag.cmd.player = aiptag.cmd.player || [];
+aiptag.gdprShowConsentTool = true;
+aiptag.gdprShowConsentToolButton = true;
+
+	//CMP tool settings
+var plays = 0;
+function playnow() {
+    plays++;
+   if (plays == 1) {
+       if (typeof adplayer != "undefined") {
+			adplayer.startPreRoll();
+		}
+       plays = -2;
+    } else {
+        //setNick(document.getElementById('nick').value, document.getElementById('skin').value);
+        return false;
+    }
+}
+ 
+function initAipPreroll() {
+    if (typeof aipPlayer != "undefined") {
+        adplayer = new aipPlayer({
+            AD_WIDTH: 960,
+            AD_HEIGHT: 540,
+            AD_FULLSCREEN: false,
+            AD_CENTERPLAYER: true,
+            PREROLL_ELEM: document.getElementById('preroll'),
+            AIP_COMPLETE: function() {
+            //    setNick(document.getElementById('nick').value, document.getElementById('skin').value);
+            //    return false;
+            },
+            AIP_REMOVE: function() {}
+        });
+    } else {
+      	
+       // setNick(document.getElementById('nick').value, document.getElementById('skin').value);
+        //return false;
+    }
+}
+
+function getScript(src, callback) {
+    var headElm = document.head || document.getElementsByTagName('head')[0];
+    var script = document.createElement("script");
+    var once = true;
+    script.async = "async";
+    script.type = "text/javascript";
+    script.charset = "UTF-8";
+    script.src = src;
+    script.onload = script.onreadystatechange = function() {
+        if (once && (!script.readyState || /loaded|complete/.test(script.readyState))) {
+            once = false;
+            callback();
+            script.onload = script.onreadystatechange = null;
+        }
+    };
+    headElm.appendChild(script);
+}
+getScript('//api.adinplay.com/libs/aiptag/pub/AGV/agarplay.club/tag.min.js', initAipPreroll);
+	</script>
+	<style>
+	@media screen and (max-width: 600px) {
+    .nomobile {
+        visibility: hidden;
+        clear: both;
+        float: right;
+        margin: 5px auto;
+        width: 22%;
+        height: auto;
+        display: none;
+        }
+}</style>
+	</head>
+<body>
+<script>
+          
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+            .then(function(registration) {
+                console.log('Service Worker Done:', registration);
+            })
+            .catch(function(error) {
+                console.log('Service Worker Error:', error);
+            });
+        }
+    </script>
+<div id="nn"></div>
+<div id="preroll"></div>
+<div id="skinModal" class="modal-skins">
+	<div class="modal-skins-content">
+		<span class="close" onclick="closeSkinPage();">&times;</span>
+		<div class="skins-gallery-logo">Skins</div>
+		<div class="skin-gallery-div">
+			<ul class="skinList" id="idSkinList"></ul>
+		</div>
+	</div>
+</div>
+ <div id="mobile_settingsModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="mobile_CloseSettings();">&times;</span>
+    <h1 class="wrapperTitle">Settings</h1>
+			<div class="checkbox-cs">
+				<input type="checkbox" id="noSkin" onchange="setSkins();">
+				<label for="noSkin">Hide Skins</label>
+			</div>
+			<div class="both"></div>
+			
+			<div class="checkbox-cs">
+				<input type="checkbox" id="noNames" onchange="setNames();">
+				<label for="noNames">Hide Names</label>
+			</div>
+			<div class="both"></div>
+			
+			<div class="checkbox-cs">
+				<input type="checkbox" id="darkTheme" onchange="setDarkTheme();">
+				<label for="darkTheme">Dark Theme</label>
+			</div>
+			<div class="both"></div>
+			
+			<div class="checkbox-cs">
+				<input type="checkbox" id="transparentRender" onchange="setTransparent();">
+				<label for="transparentRender">Transparent</label>
+			</div>
+			<div class="both"></div>
+			<div class="checkbox-cs" style="display:none;">
+				<input type="checkbox" id="smoothRender" onchange="setSmooth();">
+				<label for="smoothRender">Smooth Render</label>
+			</div>
+			
+			<div class="checkbox-cs" style="display:none;">
+				<input type="checkbox" id="simpleGreen" onchange="setSimpleGreen();">
+				<label for="simpleGreen">Simple Green</label>
+			</div>
+			
+			<div class="checkbox-cs">
+				<input type="checkbox" id="showScore" onchange="setShowScore();">
+				<label for="showScore">Show Mass</label>
+			</div>
+			<div class="both"></div>
+			
+			<div class="checkbox-cs">
+				<input type="checkbox" id="noColor" onchange="setNoColor();">
+				<label for="noColor">No Color</label>
+			</div>
+			<div class="both"></div>
+			
+			<div class="checkbox-cs">
+				<input type="checkbox" id="hideChat" onchange="setHideChat();">
+				<label for="hideChat">Hide Chat</label>
+			</div>
+			<div class="both"></div>
+			
+			<div class="checkbox-cs" style="display: none">
+				<input type="checkbox" id="getZoom" onchange="setZoom();">
+				<label for="getZoom">Zoom</label>
+			</div>
+			<div class="both"></div>
+  </div>
+</div>
+<div id="infoOverlays" style="display:none;">
+	<div id="infoDialog">
+		<div class="match-result">Match Result</div>		
+		<div class="grid-container">
+			<div class="grid-item"><span id="stats_hightesmass" style="font-size: 10px;">0</span><br>Food eaten</div>
+			<div class="grid-item"><span id="stats_hightesmass" style="font-size: 10px;">0</span><br>highest mass</div>
+			<div class="grid-item"></div>  
+			<div class="grid-item"><span id="stats_timealive" style="font-size: 10px;">00:00</span><br>time alive</div>
+			<div class="grid-item"><span id="stats_leaderboardtime" style="font-size: 10px;">0:00</span><br>leaderboard time</div>
+			<div class="grid-item"></div>  
+			<div class="grid-item"><span id="stats_cellseaten" style="font-size: 10px;">0</span><br>cells eaten</div>
+			<div class="grid-item"><span id="stats_topposition" style="font-size: 10px;">:(</span><br>top position</div>
+			<div class="grid-item"></div>
+		</div>
+		<button id="infoDialog_continueBtn" onclick="document.getElementById('infoOverlays').hide(1.0);document.getElementById('overlays').show(0.2); typeof googletag !== 'undefined' &&googletag.pubads().refresh(); return false;">Continue</button>
+		<div class="both"></div>
+		<center><p></p>
+<div id='agarplay-club_300x250'>
+		<script type='text/javascript'>
+			aiptag.cmd.display.push(function() { aipDisplayTag.display('agarplay-club_300x250'); });
+		</script>
+	</div>
+</center>
+	</div>
+</div>
+	
+<div id="overlays">
+	<div id="helloDialog">
+		<div id="leftWrapper_Top">
+			<!-- -->
+			<h1 class="wrapperTitle"><b>AGARIO GAMES</b></h1>
+			<p> 
+	First of all, <b>agario</b> <b>unblocked</b> let's start with this game, as you will not be able to get up at the computer during big hours, you have to make a good decision to start the game. Let's just say that this game, which you can play comfortably on computer, at home and at work, is not very good if you have mobile version. Because it will be much more enjoyable when it is controlled by agar.io mause and divided by w or space in order to feed on the keyboard. First of all you need to enter agario.tube to play the game on different servers. Of course, because the game is aimed at rivalry, let's also say that <h2><a href="https://agario.tube" title="agario">agario</a></h2> play is a way of playing. You can team up with your opponents in the game, and then you can leave your buddy half way down. Although this is entirely up to you, it is inevitable that agario will appear to be very simple, but in a matter of seconds it will be difficult to grow. In short, as the game is very enjoyable, thanks to the site that we have suggested to you, you will be playing in a much more pleasant way. Game Time with <h2><a href="https://agario.tube" title="agario unblocked">agario unblocked</a></h2> If you want to spend some time playing the game as you like, web-based and multi-player playing agar.io will be the features you are looking for exactly. So you will have a good time, you will enjoy the game and you will enjoy playing the best games now. Now you can start to live your game enjoyment by entering the site for agario play immediately. Tastes of Agar.io Servers For those who want to play the best, now you can start enjoying the game on quality servers today with the best alternative agario, so you can start to have a good time. For this, you can start playing agar.io by choosing from the servers on the site for <h2><a href="https://agario.tube" title="agario play">agario play</a></h2>.
+This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+	</p>
+
+		</div>
+		<div id="leftWrapper_Bottom">
+			<h1 class="wrapperTitle">Gameplay</h1>
+				<ul>
+					<li>Move your <b>mouse</b> on the screen to move your cell</li>
+					<li>Press <b>space</b> to split</li>
+					<li>Press <b>W, E</b> to eject mass</li>
+					<li>Eat food or other players in order to grow your cell</li>
+					<li>Objective: Try to get fat and eat other players</li>
+					
+				</ul>
+				<center><a href="https://discord.gg/59SexJZmYq" target=_blank"><img alt="discord" title="discord" src="imgs/discord.webp" width="120" height="40"></a></center>	
+		</div>
+		 
+		
+		<div id="rightWrapper_Top">
+			<div class="skin">
+				<div id="profile-main">
+					<div id="profile-pic" class="form-group clearfix">
+						<div id="preview-img-area"></div>
+						<br>
+						<button class="select-skin-btn" onclick="selectSkinPage(); return false;">Select Skin</button><br><br>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="rightWrapper_Bottom">
+			<h1 class="wrapperTitle">Settings</h1>
+			
+			<div class="checkbox-cs">
+				<input type="checkbox" id="noSkin" onchange="setHideSkins();">
+				<label for="noSkin">Hide Skins</label>
+			</div>
+			<div class="both"></div>
+			
+			<div class="checkbox-cs">
+				<input type="checkbox" id="noNames" onchange="setHideNames();">
+				<label for="noNames">Hide Names</label>
+			</div>
+			<div class="both"></div>
+			
+			<div class="checkbox-cs">
+				<input type="checkbox" id="darkTheme" onchange="setDarkTheme();">
+				<label for="darkTheme">Dark Theme</label>
+			</div>
+			<div class="both"></div>
+			
+			<div class="checkbox-cs">
+				<input type="checkbox" id="transparentRender" onchange="setTransparent();">
+				<label for="transparentRender">Transparent</label>
+			</div>
+			<div class="both"></div>
+			<div class="checkbox-cs" style="display:none;">
+				<input type="checkbox" id="smoothRender" onchange="setSmooth();">
+				<label for="smoothRender">Smooth Render</label>
+			</div>
+			
+			<div class="checkbox-cs" style="display:none;">
+				<input type="checkbox" id="simpleGreen" onchange="setSimpleGreen();">
+				<label for="simpleGreen">Simple Green</label>
+			</div>
+			
+			<div class="checkbox-cs">
+				<input type="checkbox" id="showScore" onchange="setShowScore();">
+				<label for="showScore">Show Mass</label>
+			</div>
+			<div class="both"></div>
+			
+			<div class="checkbox-cs">
+				<input type="checkbox" id="noColor" onchange="setNoColor();">
+				<label for="noColor">No Color</label>
+			</div>
+			<div class="both"></div>
+			
+			<div class="checkbox-cs">
+				<input type="checkbox" id="hideChat" onchange="setHideChat();">
+				<label for="hideChat">Hide Chat</label>
+			</div>
+			<div class="both"></div>
+			
+			<div class="checkbox-cs" >
+				<input type="checkbox" id="getZoom" onchange="setZoom();"> 
+				<label for="getZoom">Zoom</label>
+			</div>
+			<div class="both"></div>
+		</div>
+		
+		<form role="form">
+			<h2 class="web-logo">Agario</h2>		
+			<input type="text" autofocus placeholder="Nick" id="nick" class="playerNameInput" maxlength="15" />
+			<select id="gamemode" onchange="setserver();" required>
+				<option value="ffa1.agariodns.cyou">FFA - 1</option>
+				<option value="ffa2.agariodns.cyou">FFA -2 USA</option>
+				<option value="ffa3.agariodns.cyou">FFA - 3</option>
+				<option value="ffa44.agariodns.cyou">FFA - 4</option>
+				<!--<option value="ffa5.agariodns.cyou">FFA - 5 - USA</option>
+				<option value="ffa6.agariodns.cyou">FFA - 6 - USA</option>-->
+				<option value="pop1.agariodns.cyou">VIRUS BOMB - 1</option>
+				<option value="pop2.agariodns.cyou">VIRUS BOMB - 2</option>
+				<option value="ffa4.agariodns.cyou">CRAZY BOMB-3 USA</option>
+				<option value="ffa8.agariodns.cyou">FFA - 8</option>
+				<option value="ffa9.agariodns.cyou">FFA - 9</option>
+				<option value="ffa10.agariodns.cyou">FFA - 10</option>
+				<option value="rainbow.agariodns.cyou">RAINBOW</option>
+				<option value="team.agariodns.cyou">TEAM MODE</option>
+				<option value="black.agariodns.cyou">BLACK HOLE</option>
+				<option value="instant.agariodns.cyou">INSTANT MERGE</option>
+			</select>
+			<input type="hidden" id="txtSkin" class="form-control" class="playerSkinInput" autocomplete="off" maxlength="15">
+			<button id="playBtn" onclick="playGame(); playnow(); return false;">Play</button>
+			<button id="spectateButton" onclick="spectate(); return false;">Spectate</button>
+			<button id="mobile_settingsButton" onclick="mobile_OpenSettings(); return false;">Settings</button>
+			<button id="mobile_selectSkinButton" onclick="mobile_OpenSelectSkinPage(); return false;">Select Skin</button>
+			<div class="both"></div>
+			<div id="idFlags"></div>
+			<div class="both"></div>
+			<div id="instructions">
+		<div  style="witdh:250px;height:300px">		
+				<center>Ads</br>
+	<div id='agarplay-club_300x250_2'>
+		<script type='text/javascript'>
+			aiptag.cmd.display.push(function() { aipDisplayTag.display('agarplay-club_300x250_2'); });
+		</script>
+	</div>
+</center></div>
+			</div>
+		</form>
+	</div>
+</div>
+<canvas id="canvas" width="894" height="662"></canvas>
+
+<label style="cursor:pointer;
+	font-size:17px;
+	position: absolute;
+	color:black;
+	background-color: #4CAF50;
+	padding: 5px 10px;
+	z-index: 1;
+	bottom: 10px;
+	left: 320px;
+	user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-touch-callout: none;" onclick="clearChat();">Clear Chat</label>
+<label style="cursor:pointer;
+	font-size:17px;
+	position: absolute;
+	color:black;
+	background-color: #4CAF50;
+	padding: 5px 10px;
+	z-index: 1;
+	bottom: 10px;
+	left: 430px;
+	user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-touch-callout: none;" onclick="shareLocation();">Share Location</label>
+	
+<input type="text" id="chat_textbox" maxlength="70" placeholder="Press Enter to chat!"/>
+<div style="font-family:'Ubuntu'">&nbsp;</div>
+<script>
+/*function setGameModeWithLocalStorage(value){
+    setGameMode(value);
+    localStorage.setItem("gamemode",value);
+}*/
+function getGameMode(){
+    const servers=[
+            "ffa1.agariodns.cyou",
+			"ffa2.agariodns.cyou"
+                    
+        ];
+    const gm = localStorage.getItem("gamemode") || servers[Math.floor(Math.random()*servers.length)];
+    const options = document.querySelector("#gamemode").querySelectorAll("option");
+    options.forEach(option => option.value == gm ? option.setAttribute("selected", true) : "");
+   // setGameModeWithLocalStorage(gm);
+}
+getGameMode();</script>
+
+
+</body>
+</html>
