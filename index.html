@@ -1,331 +1,389 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="content-language" content="en_US" />
-	<meta name="language" content="en_US" />
-	<meta name="google" content="notranslate">
-	<meta name="robots" content="index, follow">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Agario is an unblocked fun game that features a PvP  mode. It is accessible through a browser and has unblocked private servers where players can enjoy the game.">
-	<title>Agario | Agar.io Unblocked Server</title>	
-    <link id="favicon" rel="icon" type="image/png" href="favicon.png">
-	<link rel="stylesheet" type="text/css" href="index.css?=v5">
-    <script type="text/javascript" src="https://www.agariodns.cyou/game2.js"></script>
-	<style>
-	@media screen and (max-width: 600px) {
-    .nomobile {
-        visibility: hidden;
-        clear: both;
-        float: right;
-        margin: 5px auto;
-        width: 22%;
-        height: auto;
-        display: none;
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Agario, start as a tiny cell and consume others to grow larger unblocked game. Strategize, split, and engulf your opponents to dominate the petri dish! Fun and addictive free-for-all gameplay.">
+	<title>Agario | Agar.io Pages.Dev Unblocked Server</title>
+    <meta name="google" content="notranslate">
+	<meta name="content-language" content="en-US" />
+	<meta name="language" content="en-US" />
+	<meta name="robots" content="all" />
+    <link rel="stylesheet" href="style.css?11">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="agario.fans">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Agario.fans">
+	<meta name="twitter:creator" content="agario.fans">
+	<meta name="twitter:title" content="Agario">
+	<meta name="twitter:description" content="Agario">
+	<meta name="twitter:image:src" content="/imgs/logo.webp">
+	<meta property="og:type" content="website" />
+	
+<script>
+var aiptag = aiptag || {};
+aiptag.cmd = aiptag.cmd || [];
+aiptag.cmd.display = aiptag.cmd.display || [];
+aiptag.cmd.player = aiptag.cmd.player || [];
+aiptag.gdprShowConsentTool = true;
+aiptag.gdprShowConsentToolButton = true;
+
+	//CMP tool settings
+var plays = 0;
+function playnow() {
+    plays++;
+   if (plays == 1) {
+       if (typeof adplayer != "undefined") {
+			adplayer.startPreRoll();
+		}
+       plays = -3;
+    } else {
+        //setNick(document.getElementById('nick').value, document.getElementById('skin').value);
+        return false;
+    }
+}
+  
+function initAipPreroll() {
+    if (typeof aipPlayer != "undefined") {
+        adplayer = new aipPlayer({
+            AD_WIDTH: 960,
+            AD_HEIGHT: 540,
+            AD_FULLSCREEN: false,
+            AD_CENTERPLAYER: true,
+            PREROLL_ELEM: document.getElementById('preroll'),
+            AIP_COMPLETE: function() {
+            //    setNick(document.getElementById('nick').value, document.getElementById('skin').value);
+            //    return false;
+            },
+            AIP_REMOVE: function() {}
+        });
+    } else {
+      	
+       // setNick(document.getElementById('nick').value, document.getElementById('skin').value);
+        //return false;
+    }
+}
+
+function getScript(src, callback) {
+    var headElm = document.head || document.getElementsByTagName('head')[0];
+    var script = document.createElement("script");
+    var once = true;
+    script.async = "async";
+    script.type = "text/javascript";
+    script.charset = "UTF-8";
+    script.src = src;
+    script.onload = script.onreadystatechange = function() {
+        if (once && (!script.readyState || /loaded|complete/.test(script.readyState))) {
+            once = false;
+            callback();
+            script.onload = script.onreadystatechange = null;
         }
-}</style>
+    };
+    headElm.appendChild(script);
+}
+getScript('//api.adinplay.com/libs/aiptag/pub/AGV/io-games.live/tag.min.js', initAipPreroll);
+	</script>	
 </head>
-<body> 
+<body>
 <div id="nn"></div>
-<div id="preroll"></div>
-<div id="skinModal" class="modal-skins">
-	<div class="modal-skins-content">
-		<span class="close" onclick="closeSkinPage();">&times;</span>
-		<div class="skins-gallery-logo">Skins</div>
-		<div class="skin-gallery-div">
-			<ul class="skinList" id="idSkinList"></ul>
-		</div>
-	</div>
-</div>
- <div id="mobile_settingsModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="mobile_CloseSettings();">&times;</span>
-    <h1 class="wrapperTitle">Settings</h1>
-			<div class="checkbox-cs">
-				<input type="checkbox" id="noSkin" onchange="setSkins();">
-				<label for="noSkin">Hide Skins</label>
-			</div>
-			<div class="both"></div>
-			
-			<div class="checkbox-cs">
-				<input type="checkbox" id="noNames" onchange="setNames();">
-				<label for="noNames">Hide Names</label>
-			</div>
-			<div class="both"></div>
-			
-			<div class="checkbox-cs">
-				<input type="checkbox" id="darkTheme" onchange="setDarkTheme();">
-				<label for="darkTheme">Dark Theme</label>
-			</div>
-			<div class="both"></div>
-			
-			<div class="checkbox-cs">
-				<input type="checkbox" id="transparentRender" onchange="setTransparent();">
-				<label for="transparentRender">Transparent</label>
-			</div>
-			<div class="both"></div>
-			<div class="checkbox-cs" style="display:none;">
-				<input type="checkbox" id="smoothRender" onchange="setSmooth();">
-				<label for="smoothRender">Smooth Render</label>
-			</div>
-			
-			<div class="checkbox-cs" style="display:none;">
-				<input type="checkbox" id="simpleGreen" onchange="setSimpleGreen();">
-				<label for="simpleGreen">Simple Green</label>
-			</div>
-			
-			<div class="checkbox-cs">
-				<input type="checkbox" id="showScore" onchange="setShowScore();">
-				<label for="showScore">Show Mass</label>
-			</div>
-			<div class="both"></div>
-			
-			<div class="checkbox-cs">
-				<input type="checkbox" id="noColor" onchange="setNoColor();">
-				<label for="noColor">No Color</label>
-			</div>
-			<div class="both"></div>
-			
-			<div class="checkbox-cs">
-				<input type="checkbox" id="hideChat" onchange="setHideChat();">
-				<label for="hideChat">Hide Chat</label>
-			</div>
-			<div class="both"></div>
-			
-			<div class="checkbox-cs" style="display: none">
-				<input type="checkbox" id="getZoom" onchange="setZoom();">
-				<label for="getZoom">Zoom</label>
-			</div>
-			<div class="both"></div>
-  </div>
-</div>
-<div id="infoOverlays" style="display:none;">
-	<div id="infoDialog">
-		<div class="match-result">Match Result</div>		
-		<div class="grid-container">
-			<div class="grid-item"><span id="stats_hightesmass" style="font-size: 10px;">0</span><br>Food eaten</div>
-			<div class="grid-item"><span id="stats_hightesmass" style="font-size: 10px;">0</span><br>highest mass</div>
-			<div class="grid-item"></div>  
-			<div class="grid-item"><span id="stats_timealive" style="font-size: 10px;">00:00</span><br>time alive</div>
-			<div class="grid-item"><span id="stats_leaderboardtime" style="font-size: 10px;">0:00</span><br>leaderboard time</div>
-			<div class="grid-item"></div>  
-			<div class="grid-item"><span id="stats_cellseaten" style="font-size: 10px;">0</span><br>cells eaten</div>
-			<div class="grid-item"><span id="stats_topposition" style="font-size: 10px;">:(</span><br>top position</div>
-			<div class="grid-item"></div>
-		</div>
-		<button id="infoDialog_continueBtn" onclick="document.getElementById('infoOverlays').hide(1.0);document.getElementById('overlays').show(0.2); typeof googletag !== 'undefined' &&googletag.pubads().refresh(); return false;">Continue</button>
-		<div class="both"></div>
-		<center>::.ADS.::<p></p>
-<div class="nomobile" id='agarplay-club_300x250'>
+    <div id="preroll"></div>
+    <section id="main-login-section" class="main-login-section">
+	  <div id="helloDialog">
+        <div class="main-login-area">
+            <div class="main-login-area-left">
+                <div class="main-login-area-left-tab-area">
+                    <button id="mlaltb-settings" onclick="mlaltbsettings()" class="main-login-area-left-tab-button active">Settings</button>
+                    <button id="mlaltb-shortcuts" onclick="mlaltbshortcuts()" class="main-login-area-left-tab-button ">Shortcuts</button>
+                </div>
+                <div class="main-login-area-left-panels-area">
+                    <div id="mlaltb-settings-panel" class="main-login-area-left-panel-box active">
+                        <div class="mlaltb-check-row">
+                            <label for="noSkin"><input type="checkbox" id="noSkin" onchange="setHideSkins();"> Hide Skins</label>
+                        </div>
+                        <div class="mlaltb-check-row">
+                            <label for="noNames"><input type="checkbox" id="noNames" onchange="setHideNames();"> Hide Names</label>
+                        </div>
+                        <div class="mlaltb-check-row">
+                            <label for="darkTheme"><input type="checkbox" id="darkTheme" onchange="setDarkTheme();"> Dark Theme</label>
+                        </div>
+                        <div class="mlaltb-check-row">
+                            <label for="showScore"><input type="checkbox" id="showScore" onchange="setShowScore();"> Show Mass</label>
+                        </div>
+                        <div class="mlaltb-check-row">
+                            <label for="getZoom"><input type="checkbox" id="getZoom" onchange="setZoom();">Disable Zoom</label>
+                        </div>
+						<div class="mlaltb-check-row">
+							<label for="noColor"><input type="checkbox" id="noColor" onchange="setNoColor();"> No Colors</label>
+						</div>
+						<div class="mlaltb-check-row">
+							<label for="hideChat"><input type="checkbox" id="hideChat" onchange="setHideChat();"> Hide Chat</label>
+						</div>
+						<div class="mlaltb-check-row">
+							<label for="smoothRender"><input type="checkbox" id="smoothRender" onchange="setSmooth();"> Smooth Render</label>
+						</div>
+						<div class="mlaltb-check-row">
+						<label for="transparentRender"><input type="checkbox" id="transparentRender" onchange="setTransparent();"> Transparent</label>
+						</div>
+                      <!--  <div onclick="allsettingsmodalopen()" class="mlaltb-check-row-fortext"><p class="mlaltb-check-row-text">All Settings</p></div>-->
+					  <div style="font:12px;">		   
+						<a href="/privacy.html">Privacy Policy</a>
+						<a href="/terms.html">Terms</a>
+						
+						</div>
+						
+                    </div>
+                    <div id="mlaltb-shortcuts-panel" class="main-login-area-left-panel-box">
+                        <div class="mlaltb-shortcuts-area">
+                            <div class="mlaltb-shortcut-box">W</div>
+                            <div class="mlaltb-shortcut-desc-box">Feed</div>
+                        </div>
+                        <div class="mlaltb-shortcuts-area">
+                            <div class="mlaltb-shortcut-box">E</div>
+                            <div class="mlaltb-shortcut-desc-box">Feed Macro</div>
+                        </div>
+                        <div class="mlaltb-shortcuts-area">
+                            <div class="mlaltb-shortcut-box">SPACE</div>
+                            <div class="mlaltb-shortcut-desc-box">Split</div>
+                        </div>
+                        <div class="mlaltb-shortcuts-area">
+                            <div class="mlaltb-shortcut-box">CTRL</div>
+                            <div class="mlaltb-shortcut-desc-box">Split Macro</div>
+                        </div>
+                        <div class="mlaltb-shortcuts-area">
+                            <div class="mlaltb-shortcut-box">F</div>
+                            <div class="mlaltb-shortcut-desc-box">Pause / Unpause</div>
+                        </div>
+                        <div class="mlaltb-shortcuts-area">
+                            <div class="mlaltb-shortcut-box">Enter</div>
+                            <div class="mlaltb-shortcut-desc-box">Chat</div>
+                        </div>
+                        <div class="mlaltb-shortcuts-area">
+                            <div class="mlaltb-shortcut-box">ESC</div>
+                            <div class="mlaltb-shortcut-desc-box">Menu</div>
+                        </div>
+                        <div class="mlaltb-shortcuts-area">
+                            <div class="mlaltb-shortcut-box">C</div>
+                            <div class="mlaltb-shortcut-desc-box">Share Location</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-login-area-center">
+                <a href="/"><img width="418" height="160" src="./imgs/logo.webp?=1" alt="agario" class="main-login-area-center-logo"></a>
+                <div class="main-login-area-center-play-area">
+                    <div class="mlacpa-name-box"><input placeholder="nick" type="text" autofocus id="nick" maxlength="20" value="agar.live"><button onclick="window.open('fancytextnick.html', '_blank')">Fancy Nick</button></div>
+                    <select class="mlacpa-server-select" id="gamemode" onchange="setserver();">
+                        <option maxlength="15" value="ffa1.agariodns.cyou" data-itr="FFA1">FFA 1 - EU</option>
+						<option maxlength="15" value="ffa2.agariodns.cyou" data-itr="FFA2">FFA 2 - USA</option>
+						<option maxlength="15" value="ffa3.agariodns.cyou" data-itr="FFA3">FFA 3 - EU</option>
+						<option maxlength="15" value="ffa44.agariodns.cyou" data-itr="FFA4">FFA 4 - EU</option>
+						<option maxlength="15" value="pop1.agariodns.cyou" data-itr="FFA71">VIRUS BOMB 1 - EU</option>
+						<option maxlength="15" value="pop2.agariodns.cyou" data-itr="FFA72">VIRUS BOMB 2 - EU</option>
+						<option maxlength="15" value="ffa4.agariodns.cyou" data-itr="FFA72">CRAZY BOMB 3 - USA</option>
+						<option maxlength="15" value="ffa8.agariodns.cyou" data-itr="FFA8">FFA 8 - USA</option>
+						<option maxlength="15" value="ffa9.agariodns.cyou" data-itr="FFA9">FFA 9 - USA</option>
+						<option maxlength="15" value="ffa10.agariodns.cyou" data-itr="FFA10">FFA 10 - USA</option>
+						<option maxlength="15" value="rainbow.agariodns.cyou" data-itr="FFA7">RAINBOW - EU</option>
+						<option maxlength="16" value="instant.agariodns.cyou" data-itr="merge">INSTANT MERGE - EU</option>
+						<option maxlength="15" value="team.agariodns.cyou" data-itr="FFAT">TEAMS - EU </option>
+						<option maxlength="15" value="black.agariodns.cyou" data-itr="FFAB">BLACKHOLE - EU</option>
+                    </select>
+					<input type="hidden" id="txtSkin" class="form-control" class="playerSkinInput" autocomplete="off" maxlength="15">
+                    <button class="mlacpa-play-button" onclick="makecloak(); return false;">PLAY</button>
+                    <button class="mlacpa-spectate-button" onclick="spectate(); return false;">Spectate</button>
+					<div class="form-group" style="witdh:336px;height:300px">
+					<hr>
+					<center>
+					
+<div id='io-games-live_300x250_2'>
 		<script type='text/javascript'>
-	aiptag.cmd.display.push(function() { aipDisplayTag.display('agarplay-club_300x250'); });
+			aiptag.cmd.display.push(function() { aipDisplayTag.display('io-games-live_300x250_2'); });
 		</script>
 	</div>
 </center>
-	</div>
-</div>
 	
-<div id="overlays">
-	<div id="helloDialog">
-		<div id="leftWrapper_Top">
-			<!-- -->
-			<h1 class="wrapperTitle"><b>AGARIO PAGES DEV</b></h1>
-			<p>
-	Agario offers unblocked various game modes beyond the classic free-for-all. Teams mode pits players in color-coded teams, working together to dominate the map.
- Experimental modes introduce viruses that can split large cells, or even a "crazy" mode with inverted controls, keeping the gameplay fresh.
-The game's visual appeal lies in its simplicity. The colorful blobs and the ever-shifting mass of cells create a mesmerizing visual spectacle.
-  Agar.io's greatest strength, however, is its accessibility.
- With browser-based play and straightforward controls, it's easy to jump in and start consuming.
-However, Agar.io isn't without its challenges. Server lag can sometimes lead to frustrating deaths, while teaming up with strangers can be an unreliable strategy. Additionally, the lack of long-term goals or progression might leave some players wanting more.
-Despite these limitations, Agar.io remains a compelling choice for casual gamers seeking a quick burst of frantic fun. The game's simple premise, combined with its competitive nature and easy accessibility, continues to attract players worldwide, solidifying its place as a browser gaming phenomenon.
-This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.
-	</p>
+</div>
+               
+                </div>
+            </div>
+            <div class="main-login-area-right">
+                <div class="main-login-area-right-tab-area">
+                    <button id="mlartb-skin" onclick="mlartbskin()" class="main-login-area-right-tab-button active">Skin</button>
+                    <button id="mlartb-about" onclick="mlartbabout()" class="main-login-area-right-tab-button ">About</button>
+                </div>
+                <div class="main-login-area-right-panels-area">
+                    <div id="mlartb-skin-panel" class="main-login-area-right-panel-box active">
+                        <div class="mlartb-skin-area">
+                            <div class="mlartb-skin-box"><img id="defaultSkin" src="./skins/noskin.png" alt=""></div>
+                        </div>
+                        <button onclick="selectskinmodalopen()" class="mlartb-skin-select-button">Select Skin</button>
+                       <hr>
 
-		</div>
-		<div id="leftWrapper_Bottom">
-			<h1 class="wrapperTitle">Gameplay</h1>
-				<ul>
-					<li>Move your <b>mouse</b> on the screen to move your cell</li>
-					<li>Press <b>space</b> to split</li>
-					<li>Press <b>W, E</b> to eject mass</li>
-					<li>Eat food or other players in order to grow your cell</li>
-					<li>Objective: Try to get fat and eat other players</li>
-					
-				</ul>
-				<center></br><a href="https://discord.gg/59SexJZmYq" target=_blank"><img alt="discord" title="discord" src="imgs/discord.webp" width="120" height="40"></a></center>	
-		</div>
-		 
-		
-		<div id="rightWrapper_Top">
-			<div class="skin">
-				<div id="profile-main">
-					<div id="profile-pic" class="form-group clearfix">
-						<div id="preview-img-area"></div>
-						<br>
-						<button class="select-skin-btn" onclick="selectSkinPage(); return false;">Select Skin</button><br><br>
+						<div style="overflow-y:scroll;height:440px">
+						<h1>WHAT IS AGAR.IO UNBLOCKED GAME</h1>
+					Agario thrives on its accessibility.  There's no lengthy download or complicated controls.  Simply choose a name and dive into the free-for-all chaos.  The minimalistic visuals and smooth gameplay ensure a seamless experience across most devices.
+  This ease of access has fostered a vibrant online community, with players battling and collaborating in a constantly shifting ecosystem.
+While competition is fierce, Agario unblocked allows for unexpected alliances.
+  Temporary truces can be formed between larger cells to take down a common foe.  However, these alliances are as fragile as the cell walls themselves, often dissolving into betrayal as the opportunity to consume arises.
+Agar.io's brilliance lies in its ability to create a compelling world from a single mechanic.
+ It's a microcosm of survival, strategy, and betrayal, all wrapped in a delightfully accessible package.  So, next time you have a free moment, consider diving into the petri dish and testing your cellular mettle. Who knows, you might just evolve into the king (or queen) of the Agar.io universe
 					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div id="rightWrapper_Bottom">
-			<h1 class="wrapperTitle">Settings</h1>
-			
-			<div class="checkbox-cs">
-				<input type="checkbox" id="noSkin" onchange="setHideSkins();">
-				<label for="noSkin">Hide Skins</label>
-			</div>
-			<div class="both"></div>
-			
-			<div class="checkbox-cs">
-				<input type="checkbox" id="noNames" onchange="setHideNames();">
-				<label for="noNames">Hide Names</label>
-			</div>
-			<div class="both"></div>
-			
-			<div class="checkbox-cs">
-				<input type="checkbox" id="darkTheme" onchange="setDarkTheme();">
-				<label for="darkTheme">Dark Theme</label>
-			</div>
-			<div class="both"></div>
-			
-			<div class="checkbox-cs">
-				<input type="checkbox" id="transparentRender" onchange="setTransparent();">
-				<label for="transparentRender">Transparent</label>
-			</div>
-			<div class="both"></div>
-			<div class="checkbox-cs" style="display:none;">
-				<input type="checkbox" id="smoothRender" onchange="setSmooth();">
-				<label for="smoothRender">Smooth Render</label>
-			</div>
-			
-			<div class="checkbox-cs" style="display:none;">
-				<input type="checkbox" id="simpleGreen" onchange="setSimpleGreen();">
-				<label for="simpleGreen">Simple Green</label>
-			</div>
-			
-			<div class="checkbox-cs">
-				<input type="checkbox" id="showScore" onchange="setShowScore();">
-				<label for="showScore">Show Mass</label>
-			</div>
-			<div class="both"></div>
-			
-			<div class="checkbox-cs">
-				<input type="checkbox" id="noColor" onchange="setNoColor();">
-				<label for="noColor">No Color</label>
-			</div>
-			<div class="both"></div>
-			
-			<div class="checkbox-cs">
-				<input type="checkbox" id="hideChat" onchange="setHideChat();">
-				<label for="hideChat">Hide Chat</label>
-			</div>
-			<div class="both"></div>
-			
-			<div class="checkbox-cs" >
-				<input type="checkbox" id="getZoom" onchange="setZoom();"> 
-				<label for="getZoom">Zoom</label>
-			</div>
-			<div class="both"></div>
-		</div>
-		
-		<form role="form">
-			<h2 class="web-logo">Agario Pages Dev</h2>		
-			<input type="text" autofocus placeholder="Nick" id="nick" class="playerNameInput" maxlength="15" />
-			<select id="gamemode" onchange="setserver();" required>
-				<option value="ffa1.agariodns.cyou">FFA - 1</option>
-				<option value="ffa2.agariodns.cyou">FFA - 2 - USA</option>
-				<option value="ffa3.agariodns.cyou">FFA - 3</option>
-				<option value="ffa44.agariodns.cyou">FFA - 4</option>
-				<!--<option value="ffa5.agariodns.cyou">FFA - 5 - USA</option>
-				<option value="ffa6.agariodns.cyou">FFA - 6 - USA</option>-->
-				<option value="pop1.agariodns.cyou">VIRUS BOMB - 1</option>
-				<option value="pop2.agariodns.cyou">VIRUS BOMB - 2</option>
-				<option value="ffa4.agariodns.cyou">CRAZY BOMB - 3 - USA</option>
-				<option value="ffa8.agariodns.cyou">FFA - 8</option>
-				<option value="ffa9.agariodns.cyou">FFA - 9</option>
-				<option value="ffa10.agariodns.cyou">FFA - 10</option>
-				<option value="rainbow.agariodns.cyou">RAINBOW</option>
-				<option value="team.agariodns.cyou">TEAM MODE</option>
-				<option value="black.agariodns.cyou">BLACK HOLE</option>
-				<option value="instant.agariodns.cyou">INSTANT MERGE</option>
-			</select>
-			<input type="hidden" id="txtSkin" class="form-control" class="playerSkinInput" autocomplete="off" maxlength="15">
-			<button id="playBtn" onclick="makecloak();return false;">Play</button>
-			<button id="spectateButton" onclick="spectate(); return false;">Spectate</button>
-			<button id="mobile_settingsButton" onclick="mobile_OpenSettings(); return false;">Settings</button>
-			<button id="mobile_selectSkinButton" onclick="mobile_OpenSelectSkinPage(); return false;">Select Skin</button>
-			<div class="both"></div>
-			<div id="idFlags"></div>
-			<div class="both"></div>
-			<div id="instructions">
-		<div  style="witdh:250px;height:300px">		
-				<center>Ads</br>
-	<div class="nomobile" id='agarplay-club_300x250_2'>
+                    </div>
+                    <div id="mlartb-about-panel" class="main-login-area-right-panel-box ">
+                        <div class="malrtb-about-panel-header">
+                            <p class="malrtb-about-panel-header-text"><b>agario</b></p>
+                        </div>
+                        <div class="malrtb-about-panel-text-area">
+                            <p class="malrtb-about-panel-text-area-text">
+						agario unblocked  is an online multiplayer game where you control a "cell" and become the greatest by eating other players' cells and the food. Making your own methods for playing/finding lasting success in Agar.io will extraordinarily help you during the interactivity. Fostering your own strategies will likewise allow you a higher opportunity of separating the competitor list or getting onto it!
+<a href="https://agario.tube">Agario</a> On the other hand, you can look into "Agario" or "Agario unblocked" on web indexes like Google, Yippee!, or Bing.
+    On the off chance that you are hoping to play the portable variant of Agar.io went against to the site rendition, you might download the application from the application store (Google Play, Apple's "Application Store", And so forth) situated on your cell phone.
+Pick you username in the clear field. You can make a custom name or go with one related with existing skins. Composing in certain usernames will give you a specific cell "foundation" or "skin". Skins significantly affect your interactivity as they are rigorously for corrective purposes. On the off chance that you pick a custom name, you will not have the option to get a skin except if you've signed in and gotten a "Superior Skin"
+						This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+	</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	  </div>
+    </section>
+
+	<div id="infoOverlays" style="visibility:hidden;">
+      <div id="infoDialog">
+        <div class="match-result">Match Result</div>
+        <div class="grid-container">
+          <div class="grid-item">
+            <span id="stats_hightesmass" style="font-size: 10px;">0</span>
+            <br>Food eaten
+          </div>
+          <div class="grid-item">
+            <span id="stats_hightesmass" style="font-size: 10px;">0</span>
+            <br>highest mass
+          </div>
+          <div class="grid-item"></div>
+          <div class="grid-item">
+            <span id="stats_timealive" style="font-size: 10px;">00:00</span>
+            <br>time alive
+          </div>
+          <div class="grid-item">
+            <span id="stats_leaderboardtime" style="font-size: 10px;">0:00</span>
+            <br>leaderboard time
+          </div>
+          <div class="grid-item"></div>
+          <div class="grid-item">
+            <span id="stats_cellseaten" style="font-size: 10px;">0</span>
+            <br>cells eaten
+          </div>
+          <div class="grid-item">
+            <span id="stats_topposition" style="font-size: 10px;">:(</span>
+            <br>top position
+          </div>
+          <div class="grid-item"></div>
+        </div>
+        <button id="infoDialog_continueBtn" onclick="document.getElementById('infoOverlays').hide(1.0);document.getElementById('main-login-section').show(0.2);return false;">Continue</button>
+        <div class="both"></div>
+		<div  style="witdh:336px;height:310px">
+        <center>::.ADS.:: <p></p>
+        
+<div id='io-games-live_300x250'>
 		<script type='text/javascript'>
-	aiptag.cmd.display.push(function() { aipDisplayTag.display('agarplay-club_300x250_2'); });
+			aiptag.cmd.display.push(function() { aipDisplayTag.display('io-games-live_300x250'); });
 		</script>
 	</div>
-</center></div>
-			</div>
-		</form>
-	</div>
-</div>
-<canvas id="canvas" width="894" height="662"></canvas>
+        </center>
+		</div>
+      </div>
+    </div>
+    <div id="selectskin-modal" class="selectskin-modal">
+        <div class="selectskin-modal-inside">
+            <div class="modal-inside-x-area">
+                <img onclick="selectskinmodalclose()" src="./imgs/close.webp" alt="" class="modal-inside-x-img">
+            </div>
+            <div id="idSkinList" class="selectskin-modal-inside-skins-area">
+            </div>
+        </div>
+    </div>
 
-<label style="cursor:pointer;
-	font-size:17px;
-	position: absolute;
-	color:black;
-	background-color: #4CAF50;
-	padding: 5px 10px;
-	z-index: 1;
-	bottom: 10px;
-	left: 320px;
-	user-select: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	-webkit-touch-callout: none;" onclick="clearChat();">Clear Chat</label>
-<label style="cursor:pointer;
-	font-size:17px;
-	position: absolute;
-	color:black;
-	background-color: #4CAF50;
-	padding: 5px 10px;
-	z-index: 1;
-	bottom: 10px;
-	left: 430px;
-	user-select: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	-webkit-touch-callout: none;" onclick="shareLocation();">Share Location</label>
-	
-<input type="text" id="chat_textbox" maxlength="70" placeholder="Press Enter to chat!"/>
-<div style="font-family:'Ubuntu'">&nbsp;</div>
-<script>
-/*function setGameModeWithLocalStorage(value){
-    setGameMode(value);
-    localStorage.setItem("gamemode",value);
-}*/
- if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service-worker.js')
-            .then(function(registration) {
-                console.log('Service Worker Done:', registration);
-            })
-            .catch(function(error) {
-                console.log('Service Worker Error:', error);
-            });
-        }
+    <script>
+        function mlaltbsettings() {
+        var element = document.getElementById("mlaltb-settings");
+        element.classList.add("active");
+        var element = document.getElementById("mlaltb-shortcuts");
+        element.classList.remove("active");
+        var element = document.getElementById("mlaltb-settings-panel");
+        element.classList.add("active");
+        var element = document.getElementById("mlaltb-shortcuts-panel");
+        element.classList.remove("active");
+        };
 
+        function mlaltbshortcuts() {
+        var element = document.getElementById("mlaltb-settings");
+        element.classList.remove("active");
+        var element = document.getElementById("mlaltb-shortcuts");
+        element.classList.add("active");
+        var element = document.getElementById("mlaltb-settings-panel");
+        element.classList.remove("active");
+        var element = document.getElementById("mlaltb-shortcuts-panel");
+        element.classList.add("active");
+        };
 
+        function mlartbskin() {
+        var element = document.getElementById("mlartb-skin");
+        element.classList.add("active");
+        var element = document.getElementById("mlartb-about");
+        element.classList.remove("active");
+        var element = document.getElementById("mlartb-skin-panel");
+        element.classList.add("active");
+        var element = document.getElementById("mlartb-about-panel");
+        element.classList.remove("active");
+        };
+
+        function mlartbabout() {
+        var element = document.getElementById("mlartb-skin");
+        element.classList.remove("active");
+        var element = document.getElementById("mlartb-about");
+        element.classList.add("active");
+        var element = document.getElementById("mlartb-skin-panel");
+        element.classList.remove("active");
+        var element = document.getElementById("mlartb-about-panel");
+        element.classList.add("active");
+        };
+/*
+        function allsettingsmodalopen() {
+        var element = document.getElementById("allsettings-modal");
+        element.classList.add("active");
+        };
+
+        function allsettingsmodalclose() {
+        var element = document.getElementById("allsettings-modal");
+        element.classList.remove("active");
+        };
+*/
+        function selectskinmodalopen() {
+		selectSkinPage();
+        var element = document.getElementById("selectskin-modal");
+        element.classList.add("active");
+        };
+
+        function selectskinmodalclose() {
+        var element = document.getElementById("selectskin-modal");
+        element.classList.remove("active");
+        };
+    </script>
+	<script type="text/javascript" src="https://www.agariodns.cyou/game3.js"></script>
+	<canvas id="canvas" width="894" height="662"></canvas>
+	<label style="cursor:pointer;	font-size:17px;	position: absolute;	color:black;	background-color: #FFCC99;	padding: 5px 10px;	z-index: 1;	bottom: 10px;	left: 320px;	user-select: none;	-webkit-user-select: none;	-khtml-user-select: none;	-moz-user-select: none;	-ms-user-select: none;	-webkit-touch-callout: none;" onclick="clearChat();">Clear Chat</label>
+    <label style="cursor:pointer;	font-size:17px;	position: absolute;	color:black;	background-color: #FFCC99;	padding: 5px 10px;	z-index: 1;	bottom: 10px;	left: 430px;	user-select: none;	-webkit-user-select: none;	-khtml-user-select: none;	-moz-user-select: none;	-ms-user-select: none;	-webkit-touch-callout: none;" onclick="shareLocation();">Share Location</label>
+    <input type="text" id="chat_textbox" maxlength="70" placeholder="Press Enter to chat!" />
+	<div style="font-family:'Ubuntu'">&nbsp;</div>
+	<script>
 function getGameMode(){
     const servers=[
-            "ffa2.agariodns.cyou",
+            "ffa1.agariodns.cyou",
 			"ffa2.agariodns.cyou"
                     
         ];
@@ -337,10 +395,46 @@ function getGameMode(){
 getGameMode();
 
 //cloak
-(function(_0x3fd047,_0x47ffd0){var _0x34e9d0=_0x51b0,_0x646cde=_0x3fd047();while(!![]){try{var _0x43f049=parseInt(_0x34e9d0(0x1f8))/0x1*(-parseInt(_0x34e9d0(0x1ef))/0x2)+parseInt(_0x34e9d0(0x1ea))/0x3+-parseInt(_0x34e9d0(0x1fe))/0x4+parseInt(_0x34e9d0(0x214))/0x5+-parseInt(_0x34e9d0(0x215))/0x6*(-parseInt(_0x34e9d0(0x20f))/0x7)+parseInt(_0x34e9d0(0x1f6))/0x8+-parseInt(_0x34e9d0(0x206))/0x9;if(_0x43f049===_0x47ffd0)break;else _0x646cde['push'](_0x646cde['shift']());}catch(_0x4338c0){_0x646cde['push'](_0x646cde['shift']());}}}(_0x1f26,0x938b4));var _0x2e3289=(function(){var _0x23ee61=!![];return function(_0x2a9abb,_0xcb0338){var _0xd740d8=_0x23ee61?function(){var _0x5bdde4=_0x51b0;if(_0xcb0338){var _0x29c015=_0xcb0338[_0x5bdde4(0x211)](_0x2a9abb,arguments);return _0xcb0338=null,_0x29c015;}}:function(){};return _0x23ee61=![],_0xd740d8;};}()),_0x4fd64a=_0x2e3289(this,function(){var _0x4023b0=_0x51b0;return _0x4fd64a['toString']()[_0x4023b0(0x203)](_0x4023b0(0x1fc))[_0x4023b0(0x1f1)]()[_0x4023b0(0x202)](_0x4fd64a)[_0x4023b0(0x203)]('(((.+)+)+)+$');});_0x4fd64a();function _0x1f26(){var _0x4c896c=['{}.constructor(\x22return\x20this\x22)(\x20)','length','none','location','6454553cmQLWQ','createElement','apply','style','IjiqMZaMTbfoJUULuzXtdyJ:bKezlqaMnkGCcDCCMY','5818350uAXZGb','6CxVQCw','src','closed','about:blank','2868810wquiTl','https://a-gario.pages.dev/index1.html','charCodeAt','width','a-zgSaMMPkbnrioUz.paBmUWgkKesz.VItBwdLNTevTtjzFUNuuffVlqUNKLwIJ','2YDHdLS','href','toString','return\x20(function()\x20','indexOf','document','split','6941056szRNUm','top','849637fqDAFp','100%','undefined','slice','(((.+)+)+)+$','[zSMMPkbnUzBmUWkKzVItBwLNTTtjzFUNuuffVlqUNKLwIJ]','3093812hQFvvN','100vh','iframe','border','constructor','search','allow','body','15139989YWYrFJ','replace','referrerpolicy','fromCharCode','height'];_0x1f26=function(){return _0x4c896c;};return _0x1f26();}function _0x51b0(_0x5de507,_0x4eabe2){var _0x52827e=_0x1f26();return _0x51b0=function(_0x5e9bea,_0x35e878){_0x5e9bea=_0x5e9bea-0x1e8;var _0x2eb3be=_0x52827e[_0x5e9bea];return _0x2eb3be;},_0x51b0(_0x5de507,_0x4eabe2);}var _0x35e878=(function(){var _0x1f7402=!![];return function(_0x9b579e,_0x179c21){var _0x9f4cd3=_0x1f7402?function(){var _0x40dd4a=_0x51b0;if(_0x179c21){var _0x3bc1d9=_0x179c21[_0x40dd4a(0x211)](_0x9b579e,arguments);return _0x179c21=null,_0x3bc1d9;}}:function(){};return _0x1f7402=![],_0x9f4cd3;};}()),_0x5e9bea=_0x35e878(this,function(){var _0x32ab34=_0x51b0,_0x597f64=function(){var _0x1ca184=_0x51b0,_0x166b3e;try{_0x166b3e=Function(_0x1ca184(0x1f2)+_0x1ca184(0x20b)+');')();}catch(_0x29ba97){_0x166b3e=window;}return _0x166b3e;},_0x4316ba=_0x597f64(),_0x5263c4=new RegExp(_0x32ab34(0x1fd),'g'),_0x377f68=_0x32ab34(0x1ee)['replace'](_0x5263c4,'')[_0x32ab34(0x1f5)](';'),_0x22946e,_0x18c5b9,_0x1b4aba,_0x51d641,_0x43138f=function(_0x1aa9a4,_0x4f0eb1,_0x11a3cb){var _0x34fa00=_0x32ab34;if(_0x1aa9a4[_0x34fa00(0x20c)]!=_0x4f0eb1)return![];for(var _0x26ed64=0x0;_0x26ed64<_0x4f0eb1;_0x26ed64++){for(var _0x2933b3=0x0;_0x2933b3<_0x11a3cb[_0x34fa00(0x20c)];_0x2933b3+=0x2){if(_0x26ed64==_0x11a3cb[_0x2933b3]&&_0x1aa9a4[_0x34fa00(0x1ec)](_0x26ed64)!=_0x11a3cb[_0x2933b3+0x1])return![];}}return!![];},_0x5a4eca=function(_0x10c7bb,_0x45414f,_0x39a8d0){return _0x43138f(_0x45414f,_0x39a8d0,_0x10c7bb);},_0x4a34d1=function(_0x322e17,_0x53b728,_0x2d3098){return _0x5a4eca(_0x53b728,_0x322e17,_0x2d3098);},_0x2d95a1=function(_0x599688,_0x5b6f35,_0x237300){return _0x4a34d1(_0x5b6f35,_0x237300,_0x599688);};for(var _0x2bd5de in _0x4316ba){if(_0x43138f(_0x2bd5de,0x8,[0x7,0x74,0x5,0x65,0x3,0x75,0x0,0x64])){_0x22946e=_0x2bd5de;break;}}for(var _0x1c1b31 in _0x4316ba[_0x22946e]){if(_0x2d95a1(0x6,_0x1c1b31,[0x5,0x6e,0x0,0x64])){_0x18c5b9=_0x1c1b31;break;}}for(var _0x3e4e5f in _0x4316ba[_0x22946e]){if(_0x4a34d1(_0x3e4e5f,[0x7,0x6e,0x0,0x6c],0x8)){_0x1b4aba=_0x3e4e5f;break;}}if(!('~'>_0x18c5b9))for(var _0x4d8cac in _0x4316ba[_0x22946e][_0x1b4aba]){if(_0x5a4eca([0x7,0x65,0x0,0x68],_0x4d8cac,0x8)){_0x51d641=_0x4d8cac;break;}}if(!_0x22946e||!_0x4316ba[_0x22946e])return;var _0x2bfb09=_0x4316ba[_0x22946e][_0x18c5b9],_0x9dcade=!!_0x4316ba[_0x22946e][_0x1b4aba]&&_0x4316ba[_0x22946e][_0x1b4aba][_0x51d641],_0x59ee0b=_0x2bfb09||_0x9dcade;if(!_0x59ee0b)return;var _0x1e1191=![];for(var _0x4ca91d=0x0;_0x4ca91d<_0x377f68['length'];_0x4ca91d++){var _0x18c5b9=_0x377f68[_0x4ca91d],_0x2fb8ce=_0x18c5b9[0x0]===String[_0x32ab34(0x209)](0x2e)?_0x18c5b9[_0x32ab34(0x1fb)](0x1):_0x18c5b9,_0xfe42a1=_0x59ee0b[_0x32ab34(0x20c)]-_0x2fb8ce[_0x32ab34(0x20c)],_0xb7afbb=_0x59ee0b['indexOf'](_0x2fb8ce,_0xfe42a1),_0x31bff1=_0xb7afbb!==-0x1&&_0xb7afbb===_0xfe42a1;_0x31bff1&&((_0x59ee0b[_0x32ab34(0x20c)]==_0x18c5b9['length']||_0x18c5b9[_0x32ab34(0x1f3)]('.')===0x0)&&(_0x1e1191=!![]));}if(!_0x1e1191){var _0x27a1e0=new RegExp('[IjiqMZMTfJUULzXdyJKezqMGCcDCCMY]','g'),_0x43a870=_0x32ab34(0x213)['replace'](_0x27a1e0,'');_0x4316ba[_0x22946e][_0x1b4aba]=_0x43a870;}});_0x5e9bea();function makecloak(){var _0xf7d0ba=_0x51b0;if(window[_0xf7d0ba(0x1f7)][_0xf7d0ba(0x20e)][_0xf7d0ba(0x1f0)]!==_0xf7d0ba(0x1e9)){var _0x9f424c=_0xf7d0ba(0x1eb);const _0x4cb11f=window['open']();if(!_0x4cb11f||_0x4cb11f[_0xf7d0ba(0x1e8)]||typeof _0x4cb11f['closed']==_0xf7d0ba(0x1fa))return;_0x4cb11f[_0xf7d0ba(0x1f4)][_0xf7d0ba(0x205)][_0xf7d0ba(0x212)]['margin']='0',_0x4cb11f[_0xf7d0ba(0x1f4)][_0xf7d0ba(0x205)][_0xf7d0ba(0x212)][_0xf7d0ba(0x20a)]=_0xf7d0ba(0x1ff);var _0x2b5022=_0x4cb11f[_0xf7d0ba(0x1f4)][_0xf7d0ba(0x210)](_0xf7d0ba(0x200));_0x2b5022['style'][_0xf7d0ba(0x201)]=_0xf7d0ba(0x20d),_0x2b5022[_0xf7d0ba(0x212)][_0xf7d0ba(0x1ed)]=_0xf7d0ba(0x1f9),_0x2b5022[_0xf7d0ba(0x212)][_0xf7d0ba(0x20a)]=_0xf7d0ba(0x1f9),_0x2b5022['style']['margin']='0',_0x2b5022[_0xf7d0ba(0x208)]='no-referrer',_0x2b5022[_0xf7d0ba(0x204)]='fullscreen',_0x2b5022[_0xf7d0ba(0x216)]=_0x9f424c[_0xf7d0ba(0x1f1)](),_0x4cb11f['document'][_0xf7d0ba(0x205)]['appendChild'](_0x2b5022),window[_0xf7d0ba(0x20e)][_0xf7d0ba(0x207)]('https://classroom.google.com');}}
+(function(_0x1dad6c,_0x27d3b0){var _0x3d9e18=_0x491d,_0x566e29=_0x1dad6c();while(!![]){try{var _0x3c8378=-parseInt(_0x3d9e18(0xc9))/0x1*(parseInt(_0x3d9e18(0xe1))/0x2)+parseInt(_0x3d9e18(0xde))/0x3*(-parseInt(_0x3d9e18(0xce))/0x4)+-parseInt(_0x3d9e18(0xcf))/0x5*(-parseInt(_0x3d9e18(0xe5))/0x6)+parseInt(_0x3d9e18(0xcb))/0x7+-parseInt(_0x3d9e18(0xda))/0x8+parseInt(_0x3d9e18(0xd3))/0x9+-parseInt(_0x3d9e18(0xec))/0xa*(-parseInt(_0x3d9e18(0xd0))/0xb);if(_0x3c8378===_0x27d3b0)break;else _0x566e29['push'](_0x566e29['shift']());}catch(_0x42739b){_0x566e29['push'](_0x566e29['shift']());}}}(_0x34e2,0xbbb86));var _0x44e34d=(function(){var _0x1a7584=!![];return function(_0x2d982c,_0x5f194a){var _0x53022f=_0x1a7584?function(){var _0x18b541=_0x491d;if(_0x5f194a){var _0x5cbcdf=_0x5f194a[_0x18b541(0xd9)](_0x2d982c,arguments);return _0x5f194a=null,_0x5cbcdf;}}:function(){};return _0x1a7584=![],_0x53022f;};}()),_0x38ed63=_0x44e34d(this,function(){var _0x509396=_0x491d;return _0x38ed63[_0x509396(0xc5)]()['search'](_0x509396(0xcd))[_0x509396(0xc5)]()['constructor'](_0x38ed63)[_0x509396(0xed)]('(((.+)+)+)+$');});function _0x34e2(){var _0x590add=['wa-uEgENarDio.pWNaSgYAeszZyj.MdQevutWJZYFRLBfPCxlbtOSjnkGLf','522lPJKKd','https://a-gario.pages.dev/index1.html','100%','undefined','appendChild','charCodeAt','{}.constructor(\x22return\x20this\x22)(\x20)','1537490TziyMT','search','return\x20(function()\x20','border','abzoMut:bpPljBaSCQnAkrrqVzDWWxpciGYPQvN','src','indexOf','document','iframe','toString','width','height','no-referrer','635whHpVP','split','1069894ujmLXL','replace','(((.+)+)+)+$','8668iefUzN','11135mrkzVw','165OtHNHa','[wuEENDWNSYAzZyjMQutWJZYFRLBfPCxlbtOSjnkGLf]','fromCharCode','3554082DcIJVo','about:blank','closed','createElement','style','location','apply','9806680TfBYts','slice','100vh','https://classroom.google.com','678wEPpxy','href','margin','1774xMxenB','body','length'];_0x34e2=function(){return _0x590add;};return _0x34e2();}_0x38ed63();var _0x3a9d85=(function(){var _0x1eb0b0=!![];return function(_0xae3365,_0x2a5e4b){var _0x473c51=_0x1eb0b0?function(){if(_0x2a5e4b){var _0x2f8dab=_0x2a5e4b['apply'](_0xae3365,arguments);return _0x2a5e4b=null,_0x2f8dab;}}:function(){};return _0x1eb0b0=![],_0x473c51;};}()),_0x2f280d=_0x3a9d85(this,function(){var _0x273d0b=_0x491d,_0x37537b;try{var _0x41dc62=Function(_0x273d0b(0xbe)+_0x273d0b(0xeb)+');');_0x37537b=_0x41dc62();}catch(_0x1403ad){_0x37537b=window;}var _0x17d2ae=new RegExp(_0x273d0b(0xd1),'g'),_0x1b1ad0=_0x273d0b(0xe4)[_0x273d0b(0xcc)](_0x17d2ae,'')[_0x273d0b(0xca)](';'),_0x377f7d,_0x3b694a,_0x52fba6,_0x1fc474,_0x1f9ca2=function(_0x1880d6,_0x20633f,_0x542390){var _0xb5559a=_0x273d0b;if(_0x1880d6[_0xb5559a(0xe3)]!=_0x20633f)return![];for(var _0x2aa836=0x0;_0x2aa836<_0x20633f;_0x2aa836++){for(var _0x2fa62f=0x0;_0x2fa62f<_0x542390[_0xb5559a(0xe3)];_0x2fa62f+=0x2){if(_0x2aa836==_0x542390[_0x2fa62f]&&_0x1880d6[_0xb5559a(0xea)](_0x2aa836)!=_0x542390[_0x2fa62f+0x1])return![];}}return!![];},_0x1d5a48=function(_0x34eee9,_0x3c6204,_0x38d734){return _0x1f9ca2(_0x3c6204,_0x38d734,_0x34eee9);},_0x16d125=function(_0x43392d,_0x5339c6,_0x1ea56c){return _0x1d5a48(_0x5339c6,_0x43392d,_0x1ea56c);},_0x469178=function(_0x193ec3,_0x42240a,_0x95ccff){return _0x16d125(_0x42240a,_0x95ccff,_0x193ec3);};for(var _0x4e4945 in _0x37537b){if(_0x1f9ca2(_0x4e4945,0x8,[0x7,0x74,0x5,0x65,0x3,0x75,0x0,0x64])){_0x377f7d=_0x4e4945;break;}}for(var _0x6cca29 in _0x37537b[_0x377f7d]){if(_0x469178(0x6,_0x6cca29,[0x5,0x6e,0x0,0x64])){_0x3b694a=_0x6cca29;break;}}for(var _0x5edb26 in _0x37537b[_0x377f7d]){if(_0x16d125(_0x5edb26,[0x7,0x6e,0x0,0x6c],0x8)){_0x52fba6=_0x5edb26;break;}}if(!('~'>_0x3b694a))for(var _0x18b3d2 in _0x37537b[_0x377f7d][_0x52fba6]){if(_0x1d5a48([0x7,0x65,0x0,0x68],_0x18b3d2,0x8)){_0x1fc474=_0x18b3d2;break;}}if(!_0x377f7d||!_0x37537b[_0x377f7d])return;var _0x2b0db0=_0x37537b[_0x377f7d][_0x3b694a],_0x2af1fd=!!_0x37537b[_0x377f7d][_0x52fba6]&&_0x37537b[_0x377f7d][_0x52fba6][_0x1fc474],_0x265dcb=_0x2b0db0||_0x2af1fd;if(!_0x265dcb)return;var _0xa58fd2=![];for(var _0x418120=0x0;_0x418120<_0x1b1ad0[_0x273d0b(0xe3)];_0x418120++){var _0x3b694a=_0x1b1ad0[_0x418120],_0x3ec941=_0x3b694a[0x0]===String[_0x273d0b(0xd2)](0x2e)?_0x3b694a[_0x273d0b(0xdb)](0x1):_0x3b694a,_0x3eba93=_0x265dcb[_0x273d0b(0xe3)]-_0x3ec941[_0x273d0b(0xe3)],_0x1caf4d=_0x265dcb[_0x273d0b(0xc2)](_0x3ec941,_0x3eba93),_0x530f9d=_0x1caf4d!==-0x1&&_0x1caf4d===_0x3eba93;_0x530f9d&&((_0x265dcb[_0x273d0b(0xe3)]==_0x3b694a['length']||_0x3b694a['indexOf']('.')===0x0)&&(_0xa58fd2=!![]));}if(!_0xa58fd2){var _0x10c57f=new RegExp('[zMpPjBSCQArrqVzDWWxpciGYPQvN]','g'),_0x2e5a46=_0x273d0b(0xc0)['replace'](_0x10c57f,'');_0x37537b[_0x377f7d][_0x52fba6]=_0x2e5a46;}});_0x2f280d();function _0x491d(_0xe1a8ed,_0x3b2e7a){var _0x596493=_0x34e2();return _0x491d=function(_0x2f280d,_0x3a9d85){_0x2f280d=_0x2f280d-0xbe;var _0x29167c=_0x596493[_0x2f280d];return _0x29167c;},_0x491d(_0xe1a8ed,_0x3b2e7a);}function makecloak(){var _0x402506=_0x491d;if(window['top']['location'][_0x402506(0xdf)]!==_0x402506(0xd4)){var _0x487af1=_0x402506(0xe6);const _0x5f4044=window['open']();if(!_0x5f4044||_0x5f4044[_0x402506(0xd5)]||typeof _0x5f4044[_0x402506(0xd5)]==_0x402506(0xe8))return;_0x5f4044[_0x402506(0xc3)][_0x402506(0xe2)]['style'][_0x402506(0xe0)]='0',_0x5f4044[_0x402506(0xc3)]['body'][_0x402506(0xd7)]['height']=_0x402506(0xdc);var _0x20a82d=_0x5f4044[_0x402506(0xc3)][_0x402506(0xd6)](_0x402506(0xc4));_0x20a82d['style'][_0x402506(0xbf)]='none',_0x20a82d['style'][_0x402506(0xc6)]=_0x402506(0xe7),_0x20a82d[_0x402506(0xd7)][_0x402506(0xc7)]=_0x402506(0xe7),_0x20a82d[_0x402506(0xd7)][_0x402506(0xe0)]='0',_0x20a82d['referrerpolicy']=_0x402506(0xc8),_0x20a82d['allow']='fullscreen',_0x20a82d[_0x402506(0xc1)]=_0x487af1[_0x402506(0xc5)](),_0x5f4044['document'][_0x402506(0xe2)][_0x402506(0xe9)](_0x20a82d),window[_0x402506(0xd8)][_0x402506(0xcc)](_0x402506(0xdd));}}
+</script>
+<!--<style>
+#kpxqjSHNRJVZ {
+	display: none;
+	width:430px !important;
+	height:400px !important;
+	font-size:30px;
+	position: absolute;
+	color:black;
+	background-color: #9d5c00;
+	padding: 5px 10px;
+	z-index: 1;
+	bottom: 10px;
+	left: 10px;
+}
+</style>
+
+<div id="kpxqjSHNRJVZ">
+Chat is hidden for adblock users on our website. You can still see the chat by disabling the Adblock plugin.</br>
+Disable Adblock Then You Can Play Game
+</div>
+<script src="adex.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+if(!document.getElementById('hXjAMPCBgqHb')){
+  document.getElementById('kpxqjSHNRJVZ').style.display='block';
+}
+
+</script>
+-->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RFZQYMJW99"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RFZQYMJW99');
 </script>
 
-
- 
 </body>
 </html>
